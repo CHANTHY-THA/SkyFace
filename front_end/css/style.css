@@ -1,18 +1,25 @@
+
+
 header{
+    width: 60%;
+    margin-left: 20%;
     padding: 1px;
-    background: green;
+    background: rgb(75, 156, 179);
     color: white;
     font-family: sans-serif;
 }
 h5{
     margin: 20px;
+    margin-left: 40%;
+    font-size: 20px;
 }
 body{
     margin: 0;
     padding: 0;
+    background: rgb(133, 143, 107);
 }
 .container{
-    width: 70%;
+    width: 60%;
     margin: auto;
 }
 form{
@@ -26,10 +33,15 @@ input{
     width: 300px;
 }
 #btn{
+    width: 40%;
     padding: 10px;
     border: none;
     outline: none;
     background: blue;
     border-radius: 10px;
     color: white;
+}
+#btn:hover{
+    background: rgb(35, 157, 233);
+    cursor: pointer;
 }
