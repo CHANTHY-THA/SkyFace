@@ -27,10 +27,11 @@ function login(e) {
     message.style.color = color;
   });
   let user = {
-    name: "chanthy",
-    password: 123
+    name: userName.value,
+    password: password.value
   };
-  axios.post(GET_LOGIN_REQUEST, user).then(response);
+  console.log(user)
+  axios.post(GET_LOGIN_REQUEST, user);
 }
 
 // MAIN---------------------------------------------------------------------------------------------
