@@ -1,39 +1,63 @@
 
 
 header{
-    width: 60%;
-    margin-left: 20%;
     padding: 1px;
     background: rgb(75, 156, 179);
     color: white;
     font-family: sans-serif;
+    margin-top: 2%;
+    border-top-left-radius: 20px; ;
+}
+.body{
+    width: 40%;
+    margin-left: 30%;
+    height: 90vh;
+    border-radius: 20px;
+    display: none;
 }
 h5{
     margin: 20px;
-    margin-left: 40%;
+    margin-left: 30%;
     font-size: 20px;
 }
 body{
     margin: 0;
     padding: 0;
     background: rgb(133, 143, 107);
+    font-family: serif;
 }
 .container{
-    width: 60%;
-    margin: auto;
+    background: rgb(31, 36, 36);
+    height: 85vh;
+    border-bottom-right-radius: 20px;
 }
 form{
-    width: 300px;
-    padding: 10px;
-    margin: auto;
+    padding-top: 5%;
+    height: 50vh;
+    margin-left: 10%;
+    width: 80%;
 }
-input{
-    padding: 10px;
-    margin: 10px 0px;
-    width: 300px;
+label{
+    color: #fff;
 }
+input[type=text],
+input[type=password]{
+    box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 5px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+    color: #fff;
+    
+}
+
 #btn{
-    width: 40%;
+    width: 100%;
+    margin-top: 25%;
     padding: 10px;
     border: none;
     outline: none;
@@ -41,7 +65,83 @@ input{
     border-radius: 10px;
     color: white;
 }
-#btn:hover{
+
+#btn:hover,
+#create:hover{
     background: rgb(35, 157, 233);
     cursor: pointer;
+}
+
+/* ------------------------------------------------------- */
+
+.head{
+    background: rgb(43, 146, 153);
+    height: 8vh;
+}
+h2{
+    padding-top: 10px;
+    margin-top: 0;
+    margin-left: 45%;
+    font-size: 20px;
+    color: #fff;
+
+}
+
+.manu{
+    display: flex;
+    height: 8vh;
+}
+.profil{
+    background: rgb(21, 100, 219);
+    width: 30%;
+}
+h3{
+    color: #fff;
+    margin-left: 40%;
+    margin-top: 3%;
+
+}
+p{
+    color: #fff;
+    margin-left: 40%;
+}
+.chater{
+    background: rgb(104, 160, 177);
+    width: 70%;
+}
+.shaibar{
+    display: flex;
+}
+.name{
+    background: rgb(41, 162, 199);
+    width: 30%;
+    height: 84vh;
+}
+h4{
+    margin-top: 0;
+}
+.message{
+
+    margin-top: 3%;
+    width: 70%;
+    color: #fff;
+}
+span1{
+    margin-left: 5%;
+    padding: 5px 15px;
+    background: rgb(219, 137, 178);
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+span2{
+    margin-left: 60%;
+    margin-top: 50%;
+    padding: 5px 15px;
+    background: rgb(219, 137, 178);
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }

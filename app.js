@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-const {writeFileSync , readFileSync} = require("fs");
+const {writeFileSync,readFileSync} = require("fs");
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -14,12 +14,14 @@ app.use(express.urlencoded());
 app.listen(PORT, () => {
   console.log("server started");
 });
-let userNames = [];
+let nameList = [
+  {name: "chanthy", password: "1111"}
+];
 app.post("/login", (req, res) =>{
   let name = req.body;
-  userNames.push(name)
-  writeFileSync("users.json" , JSON.stringify(userNames));
-  res.send(userNames);
+  nameList.push(name);
+  writeFileSync("users.json", JSON.stringify(nameList));
+  res.send(nameList);
 })
 
 app.get("/login", (req, res) => {
