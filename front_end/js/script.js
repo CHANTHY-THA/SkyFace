@@ -34,8 +34,16 @@ function login(e) {
   
 }
 
+function sendMessage(){
+  console.log(text.value)
+  text.value = "";
+}
+let text = document.querySelector("#text");
+let send = document.querySelector("#send");
 let user = document.querySelector("p");
-console.log(user.textContent)
+
+send.addEventListener("click", sendMessage)
+console.log(send)
 // MAIN---------------------------------------------------------------------------------------------
 const message = document.querySelector("#message");
 const userName = document.querySelector("#userName");

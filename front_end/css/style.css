@@ -13,7 +13,7 @@ header{
     margin-left: 30%;
     height: 90vh;
     border-radius: 20px;
-    /* display: none; */
+    display: none;
 }
 h5{
     margin: 20px;
@@ -73,90 +73,3 @@ label{
 }
 
 /* ------------------------------------------------------- */
-
-.head{
-    background: rgb(43, 146, 153);
-    height: 8vh;
-}
-h2{
-    padding-top: 10px;
-    margin-top: 0;
-    margin-left: 45%;
-    font-size: 20px;
-    color: #fff;
-
-}
-
-.manu{
-    display: flex;
-}
-.profil{
-    background: rgb(21, 100, 219);
-    width: 30%;
-    display: flex;
-    height: 9vh;
-}
-.image{
-    margin-left: 5%;
-}
-img{
-    border-radius: 360px;
-    height: 5v;
-    width: 45%;
-}
-h3{
-    color: #fff;
-    margin-top: 3%;
-
-}
-p{
-    color: #fff;
-    margin-left: 40%;
-}
-.chater{
-    background: rgb(104, 160, 177);
-    width: 70%;
-}
-.shaibar{
-    width: 30%;
-    background: teal;
-    height: 85vh;
-}
-.contence{
-    width: 70%;
-}
-.main{
-    display: flex;
-}
-.message{
-    margin-top: 3%;
-    width: 100%;
-    color: #fff;
-}
-#send{
-    background: blue;
-    border-radius: 360px;
-    padding: 10px;
-    color: #fff;
-    border: none;
-    margin-left: 3%;
-}
-#text{
-    width: 50%;
-    margin-top: 45%;
-    margin-left: 10%;
-    padding: 12px 50px;
-    border-radius: 25px;
-    border: none;
-    outline: none;
-}
-span{
-    width: 100%;
-    margin-left: 5%;
-    padding: 5px 15px;
-    background: rgb(219, 137, 178);
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
-}
