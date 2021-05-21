@@ -14,9 +14,7 @@ app.use(express.urlencoded());
 app.listen(PORT, () => {
   console.log("server started");
 });
-let nameList = [
-  {name: "chanthy", password: "1111"}
-];
+let nameList = [];
 app.post("/login", (req, res) =>{
   let name = req.body;
   nameList.push(name);
@@ -27,7 +25,7 @@ app.post("/login", (req, res) =>{
 app.get("/login", (req, res) => {
   //TODO: 
   let user = JSON.parse(readFileSync("users.json").toString());
-  res.send(user)
+  res.send(nameList)
 });
 
 // connect to client and give the data

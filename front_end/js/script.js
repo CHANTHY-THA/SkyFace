@@ -34,7 +34,8 @@ function login(e) {
   
 }
 
-
+let user = document.querySelector("p");
+console.log(user.textContent)
 // MAIN---------------------------------------------------------------------------------------------
 const message = document.querySelector("#message");
 const userName = document.querySelector("#userName");
