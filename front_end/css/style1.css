@@ -58,9 +58,15 @@ p{
     display: flex;
 }
 .message{
-    margin-top: 3%;
-    width: 100%;
+    padding: 10px 0;
     color: #fff;
+}
+.sender{
+    background: rgb(44, 41, 41);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+  
 }
 #send{
     background: blue;
@@ -72,20 +78,23 @@ p{
 }
 #text{
     width: 50%;
-    margin-top: 45%;
     margin-left: 10%;
     padding: 12px 50px;
     border-radius: 25px;
     border: none;
     outline: none;
 }
-span{
-    width: 100%;
-    margin-left: 5%;
+ul{
+    box-sizing: border-box;
+}
+li{
+    margin-left: 70%;
+    list-style: none;
+    width: 20%;
     padding: 5px 15px;
-    background: rgb(219, 137, 178);
+    background: rgb(43, 189, 189);
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }

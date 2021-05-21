@@ -34,8 +34,14 @@ function login(e) {
   
 }
 
-function sendMessage(){
-  console.log(text.value)
+function sendMessage(e){
+  e.preventDefault();
+  let ul = document.querySelector("ul");
+  let li = document.createElement("li");
+  li.textContent = text.value;
+  li.style.marginTop = 1 + "%"
+  li.style.marginBottom = 1 + "%"
+  ul.appendChild(li)
   text.value = "";
 }
 let text = document.querySelector("#text");
@@ -43,10 +49,8 @@ let send = document.querySelector("#send");
 let user = document.querySelector("p");
 
 send.addEventListener("click", sendMessage)
-console.log(send)
+console.log(text)
 // MAIN---------------------------------------------------------------------------------------------
-const message = document.querySelector("#message");
+const message = document.querySelector(".message");
 const userName = document.querySelector("#userName");
 const password = document.querySelector("#password");
-const btn = document.querySelector("#btn");
-btn.addEventListener("click", login);
