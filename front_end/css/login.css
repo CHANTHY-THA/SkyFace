@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/login.jpg");
+    background-size: cover;
+    font-family: sans-serif;
+}
+.login{
+    background: rgba(255, 255, 255, 0.705);
+    width: 40%;
+    height: 66.3vh;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 10%;
+}
+h2{
+    text-align: center;
+    padding-top: 35px ;
+    padding-bottom: 20px ;
+}
+input[type="text"],
+input[type="password"]{
+    margin-left: 9%;
+    width: 80%;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+input[type="password"]{
+    margin: 3% 9%;
+}
+input[type="text"],
+input[type="password"]{
+    background: rgba(255, 255, 255, 0.541);
+    padding-left: 3%;
+}
+input[type="submit"]{
+    width: 83%;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: none;
+    margin-left: 9%;
+    background: rgba(0, 255, 55, 0.705);
+    color: #fff;
+}
+.signup{
+    background: rgba(49, 48, 48, 0.972);
+    height: 19vh;
+    margin-top: 10%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#forgot,
+#createButton{
+    background: none;
+    border: none;
+    color: #fff;
+    text-align: center;
+    margin-left: 35%;
+}
+#createButton{
+    margin-top: 4%;
+}
+#forgot{
+    margin-top: 6%;
+}
+p{
+    margin-left: 10%;
+}
+
+
+

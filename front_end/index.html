@@ -5,90 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in user</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
-    <script src="js/messages.js" defer></script>
+    <script src="js/login.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" defer></script>
   </head>
   <body>
+    
+    <div class="login">
+      <h2>Welcome to SkyFace</h2>
+      <div class="container">
+          <form>
+          <input type="text" id="userName" placeholder="username" required ><br>
+          <input type="password" id="password" placeholder="password" required><br>
 
-    <div class="conversation">
-      <div class="head"><h2>SkyFace</h2></div>
-      
-      <div class="chat">
-        <div class="manu">
-          <div class="profil">
-            <div class="image">
-              <img src="image/chanthy.jpg" alt="">
-            </div>
-            <h3>chanthy tha</h3>
+          <input type="submit" id="loginButton" value="Log in" ><br>
+          <p></p>
+          <div class="signup">
+            <input id="createButton" value="Sing up"><br>
+            <input id="forgot" value="Forgot password?">
           </div>
-          <div class="chater">
-            <h1>Edouard</h1>
-          </div>
-        </div>
-      
-        <div class="main">
-          <div class="left">
-            <label for="#"><input type="search" id="search" placeholder="Search friends.."></label>
-            <div class="shaibar">
-              <div class="image1">
-                <img src="image/pros.PNG" alt="">
-                <h3>Pros Nob</h3>
-              </div>
-              <div class="image2">
-                <img src="image/chanthy.jpg" alt="">
-                <h3>Chanthy</h3>
-              </div>
-              <div class="image3">
-                <img src="image/image.jpg" alt="">
-                <h3>Vantheav</h3>
-              </div>
-              <div class="image4">
-                <img src="image/edouard.PNG" alt="">
-                <h3>Edouard</h3>
-              </div>
-              <div class="image4">
-                <img src="image/ronan.PNG" alt="">
-                <h3>Ronan ogor</h3>
-              </div>
-              <div class="image4">
-                <img src="image/image.jpg" alt="">
-                <h3>Rady</h3>
-              </div>
-              <div class="image4">
-                <img src="image/image.jpg" alt="">
-                <h3>Him</h3>
-              </div>
-              <div class="image4">
-                <img src="image/image.jpg" alt="">
-                <h3>Houthchhay</h3>
-              </div>
-              <div class="image4">
-                <img src="image/image.jpg" alt="">
-                <h3>Pros</h3>
-              </div>
-              <div class="image4">
-                <img src="image/image.jpg" alt="">
-                <h3>Lanh</h3>
-              </div>
-              <div class="image4">
-                <img src="image/image.jpg" alt="">
-                <h3>Mengheang</h3>
-              </div>
-            </div>
-          </div>
-          <div class="contence">
-            <div class="message"></div>
-
-            <div class="sender">
-              <input type="text" id="text" placeholder="Type a message">
-              <button id="emoji-btn"> &#127773;</button>
-              <button class="submit"> <i class="material-icons"> send</i></button>
-            </div>
-          </div>
-        </div>
-        
+          </form>
       </div>
+    </div>
   </body>
-</html>
+  </html>
+  
+
