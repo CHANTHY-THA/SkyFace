@@ -1,5 +1,5 @@
 
-const IP = "192.168.56.1";
+const IP = "192.168.88.2";
 const PORT = 3000;
 const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/message";
 
