@@ -1,157 +1,53 @@
 
-
-header{
-    padding: 1px;
-    background: rgb(75, 156, 179);
-    color: white;
-    font-family: sans-serif;
-    margin-top: 2%;
-    border-top-left-radius: 20px; ;
-}
-.body{
-    width: 40%;
-    margin-left: 30%;
-    height: 90vh;
-    border-radius: 20px;
-    /* display: none; */
-}
-h5{
-    margin: 20px;
-    margin-left: 30%;
-    font-size: 20px;
-}
 body{
-    margin: 0;
-    padding: 0;
-    background: rgb(133, 143, 107);
-    font-family: serif;
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+   background-image: url("../image/background.gif");
 }
-.container{
-    background: rgb(31, 36, 36);
-    height: 85vh;
-    border-bottom-right-radius: 20px;
-}
-form{
-    padding-top: 5%;
-    height: 50vh;
-    margin-left: 10%;
-    width: 80%;
-}
-label{
-    color: #fff;
-}
-#userName,
-#password{
-    box-sizing: border-box;
-	outline: none;
-	display: block;
-	width: 100%;
-	padding: 5px;
-	border: none;
-	border-bottom: 1px solid #ddd;
-	background: transparent;
-	margin-bottom: 10px;
-    color: #fff;
-    
-}
-
-#login{
-    width: 100%;
-    margin-top: 25%;
-    padding: 10px;
-    border: none;
-    outline: none;
-    background: blue;
-    border-radius: 10px;
-    color: white;
-}
-#btn{
-    width: 100%;
-    margin-top: 10%;
-    padding: 10px;
-    border: none;
-    outline: none;
-    background: blue;
-    border-radius: 10px;
-    color: white;
-}
-
-#btn:hover,
-#login:hover{
-    background: rgb(35, 157, 233);
-    cursor: pointer;
-}
-
-/* ------------------------------------------------------- */
-
-.head{
-    background: #fff;
-    height: 3vh;
-    align-items: center;
-}
-h2{
-    padding-top: 5px;
-    margin-top: 0;
-    margin-left: 1%;
-    font-size: 10px;
-    color: #000;
-
-}
-
-.manu{
-    display: flex;
-}
-.profil{
-    background: rgb(65, 61, 61);
+.conversation{
     width: 30%;
+    margin-left: 35%;
+    margin-top: 1%;
+    height: 92vh;
+    border-radius: 24px;
+}
+.header{
+    width: 100%;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    height: 5vh;
     display: flex;
-    height: 9vh;
+    background: rgba(11, 134, 250, 0.822);
+    height: 10vh;
+    color: #fff;
 }
 .image{
-    width: 25%;
-    margin-left: 3%;
-    margin-top: 1%;
-}
-img{
-    border-radius: 360px;
-    height: 5v;
-    width: 45%;
-} 
-h3{
     color: #fff;
-    margin-top: 3%;
-
-}
-h1{
-    color: #fff;
-    margin-left: 2%;
-    font-size: 20px;
-}
-.chater{
-    background: rgb(85, 81, 81);
-    width: 70%;
-}
-.left{
-    width: 30%;
-}
-.shaibar{
-    background: rgb(65, 61, 61);
-    height: 81vh;
-    overflow-y: auto;
-}
-.contence{
-    width: 70%;
-    background: rgb(34, 32, 32);
-}
-.main{
     display: flex;
 }
+img{
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 49px;
+    height: 8vh;
+    border-radius: 360px;
+}
+p{
+    margin-left: 2%;
+    text-transform: uppercase;
+}
+#search{
+    width: 100%;
+    outline: none;
+    padding: 7px;
+}
 .message{
-    height: 73vh;
+    background: rgba(8, 8, 8, 0.795);
+    height: 72vh;
     padding: 10px 0;
     color: #fff;
     overflow-y: auto;
-    /* overflow-x: hidden; */
 }
 .paragraph{
     display: flex;
@@ -163,19 +59,25 @@ span{
     margin: 0.75rem;
     padding: 0.5rem;
     background-color: rgb(85, 82, 82);
-    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
     word-break: break-all;
 }
 .sender{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: #fff;
     position: relative;
     display: flex;
     justify-content: center;
-  
+    height: 7vh;
 }
 .submit{
+    margin-top: 7px;
     height: 5vh;
-    margin-left: 4%;
-    background-color: rgb(83, 164, 218);
+    margin-left: 20%;
+    background-color: rgb(15, 156, 250);
     color:white;
     display: flex;
     justify-content: center;
@@ -186,64 +88,15 @@ span{
 }
 .submit:hover{
     cursor: pointer;
-    background-color: rgb(122, 178, 216);
+    background-color: rgb(17, 142, 224);
 }
 #text{
-    width: 50%;
-    margin-left: 5%;
-    padding: 12px 50px;
-    border-radius: 25px;
+    width: 60%;
     border: none;
     outline: none;
     position: relative;
     margin-bottom: 0;
-    background-color: rgb(48, 46, 46);
-    color: #fff;
+    background: #fff;
+    color: #000;
 }
 
-/* ----------------------------------- */
-#search{
-    margin-top: 0;
-    width: 101%;
-    height: 5vh;
-    outline: none;
-    background: rgb(51, 50, 50);
-}
-#search_users{
-    width: 20%;
-    height: 45px;
-
-}
-.image1 h3,
-.image2 h3,
-.image3 h3,
-.image4 h3{
-    height: 30px;
-    margin-left: 10px;
-    color: white;
-}
-
-.image1,
-.image2,
-.image3,
-.image4{
-    display: flex;
-    height: 8vh;
-    padding: 10px 0;
-}
-.image1 img,
-.image2 img,
-.image3 img,
-.image4 img{
-    border-radius: 360px;
-    height: 5v;
-    width: 13%;
-    margin-left: 2%;
-}
-.image1:hover,
-.image2:hover,
-.image3:hover,
-.image4:hover{
-    background: rgb(46, 43, 43);
-    cursor: pointer;
-}

@@ -11,13 +11,15 @@ function login(e) {
     // axios.post(GET_LOGIN_REQUEST, user);
     axios.get(GET_LOGIN_REQUEST).then(response => {
         let data = response.data;
-        console.log(data)
+        console.log(username.value + password.value)
         for (let user of data){
+            console.log(user.user + user.password)
             if (username.value == user.user && password.value == user.password){
-                console.log("Login succesfuly...")
+                let name = {user : username.value , password : password.value};
+                localStorage.setItem("user",JSON.stringify(name));
                 p.textContent = "Login succesful...";
                 p.style.color = "green";
-                setTimeout(window.location.href = "chat/index.html",8000);
+                window.location.href = "../chat/index.html"
             }else{
                 p.textContent = "You don't have acount";
                 p.style.color = "red";

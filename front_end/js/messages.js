@@ -5,6 +5,7 @@ const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
 
 function sendMessage(e){
   e.preventDefault();
+  console.log("Hello")
   let message = document.querySelector(".message");
   let text = document.querySelector("#text");
   if (text.value !== ""){
@@ -15,7 +16,7 @@ function sendMessage(e){
   axios.get(GET_MESSAGE_REQUEST).then(response => {
     let isText = response.data;
     for (let use of isText){
-      if (user.value == use.name){
+      if (use.text !== ""){
         let child = document.createElement('div');
         child.className = "paragraph"
         let span = document.createElement("span");
@@ -28,6 +29,6 @@ function sendMessage(e){
   text.value = "";
 }
 
-let user = document.querySelector("h1");
 let send = document.querySelector(".submit");
 send.addEventListener("click", sendMessage);
+
