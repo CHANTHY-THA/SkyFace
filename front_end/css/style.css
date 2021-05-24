@@ -33,7 +33,7 @@ img{
     height: 8vh;
     border-radius: 360px;
 }
-p{
+h3{
     margin-left: 2%;
     text-transform: uppercase;
 }
@@ -50,8 +50,9 @@ p{
     overflow-y: auto;
 }
 .paragraph{
-    display: flex;
+    /* display: flex; */
     justify-content: flex-end;
+    
 }
 span{
     display: flex;

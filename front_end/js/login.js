@@ -1,5 +1,5 @@
 
-const IP = "192.168.88.2";
+const IP = "192.168.88.4";
 const PORT = 3000;
 const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/message";
 
@@ -17,7 +17,7 @@ function login(e) {
                 localStorage.setItem("user",JSON.stringify(name));
                 p.textContent = "Login succesful...";
                 p.style.color = "green";
-                window.location.href = "../chat/index.html"
+                window.location.href = "../chat/index.html";
             }else{
                 p.textContent = "You don't have acount";
                 p.style.color = "red";

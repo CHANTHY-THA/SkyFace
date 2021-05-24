@@ -1,9 +1,10 @@
 
-const IP = "192.168.88.2";
+const IP = "192.168.88.4";
 const PORT = 3000;
 const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
 
 function showMessage(e){
+
   if (text.value !== ""){
     let word = {user : item.user , text:text.value};
     axios.post(GET_MESSAGE_REQUEST, word);
@@ -20,12 +21,14 @@ function showMessage(e){
   axios.get(GET_MESSAGE_REQUEST).then(response => {
     let isText = response.data;
     for (let use of isText){
-      if (use.text !== "" && use.text !== null){
+      if (use.text !== ""){
         let child = document.createElement('div');
         child.className = "paragraph"
         let span = document.createElement("span");
+        let p = document.createElement("p");
         span.textContent = use.text;
         if (use.user == item.user){
+          p.textContent = item.user;
           span.style.background = "green";
         }else{
           span.style.marginLeft = 0 + "px";
@@ -37,6 +40,7 @@ function showMessage(e){
           span.style.marginLeft = "10px";
         }
         child.appendChild(span);
+        child.appendChild(p);
         message.appendChild(child);
         contence.appendChild(message)
       }
@@ -46,13 +50,11 @@ function showMessage(e){
   text.value = "";
 };
 
-let p = document.querySelector("p")
+let name = document.querySelector("h3")
 let item = JSON.parse(localStorage.getItem("user"));
-p.textContent = item.user;
+name.textContent = item.user;
 
 let text = document.querySelector("#text");
 let send = document.querySelector(".submit");
 send.addEventListener("click", showMessage);
-
-// setInterval(showMessage, 500);
 
