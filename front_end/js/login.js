@@ -11,9 +11,7 @@ function login(e) {
     // axios.post(GET_LOGIN_REQUEST, user);
     axios.get(GET_LOGIN_REQUEST).then(response => {
         let data = response.data;
-        console.log(username.value + password.value)
         for (let user of data){
-            console.log(user.user + user.password)
             if (username.value == user.user && password.value == user.password){
                 let name = {user : username.value , password : password.value};
                 localStorage.setItem("user",JSON.stringify(name));
