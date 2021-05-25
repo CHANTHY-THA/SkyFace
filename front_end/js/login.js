@@ -1,12 +1,20 @@
 
-// const IP = "192.168.88.30";
-// const PORT = 3000;
-// const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
-const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/message";
+const IP = "192.168.88.30";
+const PORT = 3000;
+const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
+// const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/message";
 
 function createUser(e){
     e.preventDefault();
-    let user = {user : firstName.value + " " + lastName.value , email : email.value , password:pass.value};
+    let gender = document.getElementsByName("gender");
+    let gen = "";
+    for (let get of gender){
+        if (get.checked){
+            gen = get.value ;
+        };
+    };
+    console.log(gen)
+    let user = {user : firstName.value + " " + lastName.value , email : email.value , password:pass.value ,gender: gen};
     if ( firstName.value !== "" && lastName.value !== "" && email.value !== "" && pass.value !== "" && confirm.value !== ""){
         axios.post(GET_LOGIN_REQUEST, user);
         loginUser.style.display = "none";

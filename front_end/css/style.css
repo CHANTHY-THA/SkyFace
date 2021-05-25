@@ -13,25 +13,49 @@ body{
     border-radius: 24px;
     background: #fff;
 }
+.contence{
+    display: block;
+}
+.userList{
+    display: none;
+    overflow-y: auto;
+    height: 73vh;
+}
 .profil{
     display: none;
-    height: 80px;
+    height: 90px;
     background: green;
     color: #fff;
     border-top-right-radius: 18px;
     border-top-left-radius: 18px;
 }
+h2{
+    margin-left: 2%;
+}
 .picture{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 h4{
     display: flex;
     justify-content: center;
-    height: 5vh;
-    margin-bottom: 5%;
+    height: 6vh;
     margin-top: 0;
-
+}
+.user{
+    display: flex;
+    margin: 10px 0;
+    padding: 5px 0;
+}
+.user:hover{
+    background: rgba(0, 0, 0, 0.623);
+    cursor: pointer;
+    color: #fff;
+}
+h1{
+    font-size: 20px;
+    margin-left: 3%;
 }
 .header{
     width: 100%;
@@ -39,6 +63,7 @@ h4{
     border-top-right-radius: 18px;
     height: 5vh;
     display: flex;
+    align-items: center;
     background: rgba(11, 134, 250, 0.822);
     height: 10vh;
     color: #fff;
@@ -63,6 +88,23 @@ img{
     width: 42px;
     height: 40px;
     border-radius: 360px;
+}
+#call{
+    margin-left: 13%;
+    width: 30px;
+    height: 5vh;
+    margin-top: 0;
+}
+#videocall{
+    width: 30px;
+    height: 5vh;
+    margin-top: 0;
+}
+#sound{
+    width: 20px;
+    height: 3vh;
+    margin-top: 5px;
+    margin-left: 1%;
 }
 h3{
     margin-left: 2%;
@@ -108,13 +150,14 @@ span{
     background: #fff;
     position: relative;
     display: flex;
+    align-items: center;
     justify-content: center;
     height: 7vh;
 }
 .submit{
     width: 30px;
-    margin-top: 10px;
-    margin-left: 14%;
+    margin-top: 5px;
+    margin-left: 12%;
     height: 4vh;
     color:red;
     background: none;
@@ -131,11 +174,15 @@ span{
 #addButton{
     border: none;
     font-size: 20px;
+    width: 25px;
     background: #fff;
+    background: rgba(9, 159, 245, 0.589);
+    border-radius: 360px;
+    text-align: center;
 }
 #text{
     margin-left:3%;
-    width: 60%;
+    width: 55%;
     border: none;
     outline: none;
     position: relative;
