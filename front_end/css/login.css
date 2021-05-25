@@ -5,8 +5,87 @@ body{
     background-size: cover;
     font-family: sans-serif;
 }
+.createUser{ 
+    display: none;
+}
+
+#firstname,
+#lastname{
+    width:35%;
+    margin-left: 40px;
+}
+#email{
+    margin-left: 40px;
+    width: 440px;
+    margin-top: 3%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+#confirm{
+    margin-top: 0;
+    margin-left: 40px;
+    width: 445px;
+}
+#pass{
+    margin-left: 40px;
+    width: 445px;
+}
+.con{
+    margin-top: 5%;
+    display: flex;
+}
+#male{
+    margin-left: 8%; 
+}
+label{
+    color: #fff;
+}
+#female{
+    margin-left: 8%;
+    color: #fff;
+}
+
+#create,
+#cancel,
+#back{
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 15%;
+    border-radius: 7px;
+    color: #fff;
+}
+#create{
+    margin-left: 8%;
+    background: rgba(0, 255, 55, 0.705);
+}
+#create:hover{
+    background: rgba(10, 221, 56, 0.568);
+}
+#cancel{
+    margin-left: 4%;
+    background: rgb(151, 150, 150);
+}
+#back{
+    margin-left: 33%;
+    background: rgb(168, 164, 164);
+}
+#create:hover,
+#cancel:hover,
+#back:hover{
+    cursor: pointer;
+}
+
+
+
+/* -------------------------------------- */
+form{
+    display: block;
+}
 .login{
-    background: rgba(255, 255, 255, 0.705);
+    background: rgba(0,0,0,0.5);
     width: 40%;
     height: 66.3vh;
     border-radius: 20px;
@@ -17,6 +96,7 @@ h2{
     text-align: center;
     padding-top: 35px ;
     padding-bottom: 20px ;
+    color:#fff
 }
 input[type="text"],
 input[type="password"]{
@@ -32,10 +112,9 @@ input[type="password"]{
 }
 input[type="text"],
 input[type="password"]{
-    background: rgba(255, 255, 255, 0.541);
     padding-left: 3%;
 }
-input[type="submit"]{
+#loginButton{
     width: 83%;
     padding: 10px 0;
     border-radius: 8px;
@@ -43,6 +122,9 @@ input[type="submit"]{
     margin-left: 9%;
     background: rgba(0, 255, 55, 0.705);
     color: #fff;
+}
+#loginButton:hover{
+    cursor: pointer;
 }
 .signup{
     background: rgba(49, 48, 48, 0.972);
@@ -60,10 +142,17 @@ input[type="submit"]{
     margin-left: 35%;
 }
 #createButton{
-    margin-top: 4%;
+    margin-top: 5%;
+    margin-left: 45%;
+}
+#createButton:hover,
+#forgot:hover{
+    cursor: pointer;
+    color: rgb(204, 195, 195);
 }
 #forgot{
-    margin-top: 6%;
+    margin-top: 5%;
+    margin-left: 40%;
 }
 p{
     margin-left: 10%;

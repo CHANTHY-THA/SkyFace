@@ -3,7 +3,8 @@ const express = require("express");
 const fs = require("fs");
 
 // CONSTANTS
-const DATA_FILE = "data.json";
+const MESSAGE_lIST = "message.json";
+const USERS = "users.json";
 const app = express();
 const port = 3000;
 
@@ -16,9 +17,10 @@ app.listen(process.env.PORT || port, () => {console.log("App is running...")});
 
 // DATA
 let messages = [];
+let users = [];
 
 app.get("/message", (req, res) => {
-  messages = JSON.parse(fs.readFileSync(DATA_FILE).toString());
+  messages = JSON.parse(fs.readFileSync(MESSAGE_lIST).toString());
   res.send(messages);
 });
 
@@ -26,9 +28,24 @@ app.post("/message", (req, res) =>{
   let name = req.body;
   console.log(name);
   messages.push(name);
-  fs.writeFileSync(DATA_FILE, JSON.stringify(messages));
+  fs.writeFileSync(MESSAGE_lIST, JSON.stringify(messages));
   res.send(messages);
 });
 
+
+
+app.get("/user", (req, res) => {
+  messages = JSON.parse(fs.readFileSync(USERS).toString());
+  res.send(messages);
+});
+
+app.post("/user", (req, res) =>{
+  let name = req.body;
+  users.push(name);
+  fs.writeFileSync(USERS, JSON.stringify(users));
+  res.send(users);
+});
+
 // Read the file to set the mesage variables
-messages = JSON.parse(fs.readFileSync(DATA_FILE).toString());
+messages = JSON.parse(fs.readFileSync(MESSAGE_lIST).toString());
+users = JSON.parse(fs.readFileSync(USERS).toString());

@@ -15,15 +15,34 @@
     <div class="login">
       <h2>Welcome to SkyFace</h2>
       <div class="container">
-          <form>
-            <input type="text" id="userName" placeholder="username" required ><br>
-            <input type="password" id="password" placeholder="password" required><br>
+          <div class="createUser">
+            <input type="text" id="firstname" placeholder="Firstname" required >
+            <input type="text" id="lastname" placeholder="Lastname" required ><br>
+            <input type="email" id="email" placeholder="Email-address" required >
+            <input type="password" id="pass" placeholder="password" required><br>
+            <input type="password" id="confirm" placeholder="Confirm-password" required><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+
+            <div class="con">
+              <input type="submit" id="create" value="Create">
+              <input type="reset" id="cancel" value="cancel">
+              <button id="back" >Back</button>
+            </div>
+          </div>
+
+
+          <form id="form">
+            <input type="text" id="userName" placeholder="username"><br>
+            <input type="password" id="password" placeholder="password" ><br>
 
             <input type="submit" id="loginButton" value="Log in" ><br>
             <p></p>
             <div class="signup">
-              <input id="createButton" value="Sing up"><br>
-              <input id="forgot" value="Forgot password?">
+              <button id="createButton">Sign up</button><br>
+              <button id="forgot">Forgot password?</button>
             </div>
           </form>
       </div>

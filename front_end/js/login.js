@@ -1,13 +1,60 @@
 
-// const IP = "192.168.88.18";
+// const IP = "192.168.88.30";
 // const PORT = 3000;
-// const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/message";
+// const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
 const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/message";
 
-function create(){
-    let user = {user : username.value , password : password.value ,text : []};
-    axios.post(GET_LOGIN_REQUEST, user);
+function createUser(e){
+    e.preventDefault();
+    let user = {user : firstName.value + " " + lastName.value , email : email.value , password:pass.value};
+    if ( firstName.value !== "" && lastName.value !== "" && email.value !== "" && pass.value !== "" && confirm.value !== ""){
+        axios.post(GET_LOGIN_REQUEST, user);
+        loginUser.style.display = "none";
+        window.location.href = "../chat/index.html";
+    }
 }
+
+let loginUser = document.querySelector(".login");
+let create = document.querySelector(".createUser");
+let firstName = document.querySelector("#firstname");
+let lastName = document.querySelector("#lastname");
+let email = document.querySelector("#email");
+let pass = document.querySelector("#pass");
+let compear = document.querySelector("#confirm");
+let addUser = document.querySelector("#create");
+let cancel = document.querySelector("#cancel");
+let back = document.querySelector("#back");
+
+addUser.addEventListener("click",createUser);
+
+// ------------------------------------------------
+
+function show(e){
+    e.preventDefault();
+    form.style.display = "none";
+    create.style.display = "block";
+}
+function Back(e){
+    e.preventDefault();
+    form.style.display = "block";
+    create.style.display = "none";
+}
+function Cancel(e){
+    e.preventDefault();
+    firstName.value = "";
+    lastName.value = "";
+    email.value = "";
+    pass.value = "";
+    compear.value = "";
+}
+
+let form = document.querySelector("#form")
+let createButton = document.querySelector("#createButton");
+createButton.addEventListener("click", show);
+back.addEventListener("click", Back);
+cancel.addEventListener("click", Cancel);
+
+// ----------------------------------------------
 
 function login(e) {
     e.preventDefault();
@@ -19,9 +66,11 @@ function login(e) {
                 localStorage.setItem("user",JSON.stringify(name));
                 p.textContent = "Login succesful...";
                 p.style.color = "green";
-                window.location.href = "../chat/index.html";
+                setTimeout(function(){
+                    window.location.href = "../chat/index.html";
+                }, 5000);
             }else{
-                p.textContent = "You don't have acount";
+                p.textContent = "You don't have acount pleace create your account";
                 p.style.color = "red";
             }
         }
