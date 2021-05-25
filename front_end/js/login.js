@@ -1,8 +1,8 @@
 
-const IP = "192.168.88.18";
-const PORT = 3000;
-const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/message";
-// const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/message";
+// const IP = "192.168.88.18";
+// const PORT = 3000;
+// const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/message";
+const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/message";
 
 function create(){
     let user = {user : username.value , password : password.value ,text : []};
