@@ -1,14 +1,16 @@
 
-// const IP = "192.168.88.32";
-// const PORT = 3000;
-// const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/message";
-const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/message";
+const IP = "192.168.88.18";
+const PORT = 3000;
+const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/message";
+// const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/message";
 
-// function user login 
+function create(){
+    let user = {user : username.value , password : password.value ,text : []};
+    axios.post(GET_LOGIN_REQUEST, user);
+}
+
 function login(e) {
     e.preventDefault();
-    // let user = {user : username.value , password : password.value ,text : []};
-    // axios.post(GET_LOGIN_REQUEST, user);
     axios.get(GET_LOGIN_REQUEST).then(response => {
         let data = response.data;
         for (let user of data){

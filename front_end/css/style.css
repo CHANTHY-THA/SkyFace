@@ -9,7 +9,7 @@ body{
     width: 30%;
     margin-left: 35%;
     margin-top: 1%;
-    height: 92vh;
+    height: 95vh;
     border-radius: 24px;
 }
 .header{
@@ -28,9 +28,9 @@ body{
 }
 img{
     margin-top: 2%;
-    margin-left: 2%;
-    width: 49px;
-    height: 8vh;
+    margin-left: 15%;
+    width: 40px;
+    height: 7vh;
     border-radius: 360px;
 }
 h3{
@@ -44,7 +44,7 @@ h3{
 }
 .message{
     background: rgba(8, 8, 8, 0.87);
-    height: 72vh;
+    height: 75vh;
     padding: 10px 0;
     color: #fff;
     overflow-y: auto;
@@ -75,11 +75,12 @@ span{
     height: 7vh;
 }
 .submit{
-    margin-top: 7px;
-    height: 5vh;
-    margin-left: 20%;
-    background-color: rgb(15, 156, 250);
-    color:white;
+    width: 30px;
+    margin-top: 10px;
+    margin-left: 14%;
+    height: 4vh;
+    color:red;
+    background: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,9 +90,14 @@ span{
 }
 .submit:hover{
     cursor: pointer;
-    background-color: rgb(17, 142, 224);
+}
+#addButton{
+    border: none;
+    font-size: 20px;
+    background: #fff;
 }
 #text{
+    margin-left:3%;
     width: 60%;
     border: none;
     outline: none;
@@ -102,6 +108,7 @@ span{
 }
 
 
+/* responsive */
 @media (max-width: 400px) {
     .conversation{
         width: 100%;
@@ -124,8 +131,8 @@ span{
     img{
         margin-top: 2%;
         margin-left: 2%;
-        width: 49px;
-        height: 8vh;
+        width: 5px;
+        height: 1vh;
         border-radius: 360px;
     }
     h3{
@@ -173,7 +180,7 @@ span{
         margin-top: 7px;
         height: 5vh;
         margin-left: 20%;
-        background-color: rgb(15, 156, 250);
+        background-color: rgb(0, 153, 255);
         color:white;
         display: flex;
         justify-content: center;
@@ -192,17 +199,20 @@ span{
         outline: none;
         position: relative;
         margin-bottom: 0;
-        background: #fff;
         color: #000;
     }
     
 }
 #emoji-btn{
+    background: #fff;
     position: absolute;
     font-size: 1.3rem;
-    background: transparent;
-    left: 75%;
+    left: 77%;
     top:7px;
     opacity:0.5;
     outline: none;
+    border: none;
+}
+#emoji-btn:hover{
+    cursor: pointer;
 }

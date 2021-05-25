@@ -1,8 +1,8 @@
 
-// const IP = "192.168.88.32";
-// const PORT = 3000;
-// const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
-const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
+const IP = "192.168.88.18";
+const PORT = 3000;
+const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
+// const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
 
 function showMessage(response){
   let contence = document.querySelector(".contence");
@@ -42,12 +42,13 @@ function loadMessage(){
 };
 
 function sendMessage(){
+  let sound = document.getElementById("audio");
   if (text.value !== ""){
+    sound.play();
     let word = {user : item.user , text:text.value};
     axios.post(GET_MESSAGE_REQUEST, word).then(showMessage);
   }
-  let sound = document.getElementById("audio");
-  sound.play();
+ 
   text.value = "";
 
 }
