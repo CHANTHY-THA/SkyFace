@@ -1,8 +1,8 @@
 
-// const IP = "192.168.88.32";
-// const PORT = 3000;
-// const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
-const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
+const IP = "192.168.88.32";
+const PORT = 3000;
+const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
+// const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
 
 function showMessage(response){
   let contence = document.querySelector(".contence");
