@@ -197,3 +197,12 @@ span{
     }
     
 }
+#emoji-btn{
+    position: absolute;
+    font-size: 1.3rem;
+    background: transparent;
+    left: 75%;
+    top:7px;
+    opacity:0.5;
+    outline: none;
+}

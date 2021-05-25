@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
     <script src="../js/messages.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.1.1/dist/index.min.js"></script>
   </head>
   <body>
 
@@ -17,6 +18,9 @@
         <img src="../image/chanthy.jpg" alt="">
         <h3></h3>
       </div>
+        <audio id="audio">
+          <source src="../sound/chat.mp3" type="audio/mpeg">;
+        </audio>
       <!-- <input id="search" type="search" placeholder="search name">
       <div class="image">
         <img src="../image/pros.PNG" alt="">
@@ -27,6 +31,7 @@
       </div>
       <div class="sender">
         <input type="text" id="text" placeholder="Type a message">
+        <button id="emoji-btn"> &#127773;</button>
         <button class="submit"> <i class="material-icons"> send</i></button>
       </div>
     </div>

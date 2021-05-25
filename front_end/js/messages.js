@@ -1,5 +1,5 @@
 
-const IP = "192.168.88.4";
+const IP = "192.168.88.32";
 const PORT = 3000;
 const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
 // const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
@@ -7,7 +7,9 @@ const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
 function showMessage(response){
   let contence = document.querySelector(".contence");
   let para = document.querySelector(".message");
-  para.remove();
+  if (para !== null){
+    para.remove();
+  }
   let message = document.createElement("div");
   message.className = "message";
   let isText = response.data;
@@ -33,7 +35,6 @@ function showMessage(response){
       contence.appendChild(message)
     } 
   } 
-  text.value = "";
 };
 
 function loadMessage(){
@@ -43,16 +44,32 @@ function loadMessage(){
 function sendMessage(){
   if (text.value !== ""){
     let word = {user : item.user , text:text.value};
-    axios.post(GET_MESSAGE_REQUEST, word);
+    axios.post(GET_MESSAGE_REQUEST, word).then(showMessage);
   }
+  let sound = document.getElementById("audio");
+  sound.play();
+  text.value = "";
+
 }
 
 let userNam = document.querySelector("h3")
 let item = JSON.parse(localStorage.getItem("user"));
 userNam.textContent = item.user;
 
+
+let btnemoji = document.getElementById('emoji-btn');
+const picker = new EmojiButton();
+document.addEventListener('DOMContentLoaded', () =>{
+    picker.on('emoji', emoji =>{
+        document.querySelector('input').value += emoji;
+    });
+    btnemoji.addEventListener('click', () => {
+        picker.togglePicker(btnemoji);
+    });
+});
+
 let text = document.querySelector("#text");
 let send = document.querySelector(".submit");
 send.addEventListener("click", sendMessage);
 
-setInterval(loadMessage, 5000);
+setInterval(loadMessage,500);
