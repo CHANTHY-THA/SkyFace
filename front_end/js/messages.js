@@ -1,5 +1,5 @@
 
-// const IP = "192.168.88.30";
+// const IP = "192.168.88.29";
 // const PORT = 3000;
 // const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
 // const GET_USERS = "http://" + IP + ":" + PORT + "/user";
@@ -61,12 +61,13 @@ let item = JSON.parse(localStorage.getItem("user"));
 userNam.textContent = item.user;
 pro.textContent = item.user;
 
+// ------------Emogi-----------------------------------------
 
 let btnemoji = document.getElementById('emoji-btn');
 const picker = new EmojiButton();
 document.addEventListener('DOMContentLoaded', () =>{
     picker.on('emoji', emoji =>{
-        document.querySelector('input').value += emoji;
+        document.querySelector('#text').value += emoji;
     });
     btnemoji.addEventListener('click', () => {
         picker.togglePicker(btnemoji);

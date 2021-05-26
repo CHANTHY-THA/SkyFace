@@ -96,9 +96,16 @@ img{
     margin-top: 0;
 }
 #videocall{
+    width: 26px;
+    height: 4vh;
+    margin-top: 0;
+    margin-left: 5%;
+}
+#setting{
     width: 30px;
     height: 5vh;
     margin-top: 0;
+    margin-left: 5%;
 }
 #sound{
     width: 20px;
@@ -175,7 +182,7 @@ span{
     border: none;
     font-size: 20px;
     width: 25px;
-    background: #fff;
+    color: #fff;
     background: rgba(9, 159, 245, 0.589);
     border-radius: 360px;
     text-align: center;
