@@ -2,7 +2,7 @@
 // const IP = "192.168.88.29";
 // const PORT = 3000;
 // const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
-// const GET_USERS = "http://" + IP + ":" + PORT + "/user";
+const GET_USERS = "https://skyface.herokuapp.com/user";
 const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
 
 function showMessage(response){
