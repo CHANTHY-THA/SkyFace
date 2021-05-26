@@ -68,12 +68,20 @@ h1{
     height: 10vh;
     color: #fff;
 }
+.UserProfile{
+    display: flex;
+    width: 90%;
+    height: 10vh;
+}
 #back{
     margin-left: 3%;
-    color: #fff;
-    border: none;
-    outline: none;
-    background: none;
+    margin-top: 5%;
+    width: 30px;
+    height: 4vh;
+}
+#person{
+    margin-left: 10%;
+    margin-top: 3%;
 }
 #back:hover{
     cursor: pointer;
@@ -89,23 +97,12 @@ img{
     height: 40px;
     border-radius: 360px;
 }
-#call{
-    margin-left: 13%;
-    width: 30px;
-    height: 5vh;
-    margin-top: 0;
-}
-#videocall{
-    width: 26px;
+#setting{
+    width: 25px;
     height: 4vh;
     margin-top: 0;
-    margin-left: 5%;
-}
-#setting{
-    width: 30px;
-    height: 5vh;
-    margin-top: 0;
-    margin-left: 5%;
+    background: none;
+    margin-left: 2%;
 }
 #sound{
     width: 20px;

@@ -1,8 +1,8 @@
 
-// const IP = "192.168.88.29";
-// const PORT = 3000;
-// const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
-const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/message";
+const IP = "192.168.88.29";
+const PORT = 3000;
+const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
+// const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/message";
 
 function createUser(e){
     e.preventDefault();
@@ -16,7 +16,7 @@ function createUser(e){
     console.log(gen)
     let user = {user : firstName.value + " " + lastName.value , email : email.value , password:pass.value ,gender: gen};
     if ( firstName.value !== "" && lastName.value !== "" && email.value !== "" && pass.value !== "" && confirm.value !== ""){
-        let name = {user : firstName.value + " " + lastName.value, password: pass.value};
+        let name = {user : firstName.value + " " + lastName.value, password: pass.value , gender: gen};
         localStorage.setItem("user",JSON.stringify(name));
         axios.post(GET_LOGIN_REQUEST, user);
         loginUser.style.display = "none";
@@ -78,7 +78,7 @@ function login(e) {
                 p.style.color = "green";
                 setTimeout(function(){
                     window.location.href = "../chat/index.html";
-                }, 5000);
+                }, 3000);
             }else{
                 p.textContent = "You don't have acount pleace create your account";
                 p.style.color = "red";

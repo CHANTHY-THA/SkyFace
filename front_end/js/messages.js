@@ -1,9 +1,9 @@
 
-// const IP = "192.168.88.29";
-// const PORT = 3000;
-// const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
-// const GET_USERS = "http://" + IP + ":" + PORT + "/user";
-const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
+const IP = "192.168.88.29";
+const PORT = 3000;
+const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
+const GET_USERS = "http://" + IP + ":" + PORT + "/user";
+// const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
 
 function showMessage(response){
   let isText = response.data;
@@ -111,6 +111,14 @@ function displayUsers(){
       let user = document.createElement("div");
       user.className = "user";
       let img = document.createElement("img");
+      let person = document.querySelector("#person");
+      console.log(item)
+      if (item.gender == "male"){
+        person.setAttribute("src", boy);
+      }else{
+        person.setAttribute("src", girl);
+      }
+
       let h1 = document.createElement("h1");
       h1.textContent = use.user;
       if (use.gender == "male"){
