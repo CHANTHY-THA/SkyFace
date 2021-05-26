@@ -2,7 +2,7 @@
 // const IP = "192.168.88.29";
 // const PORT = 3000;
 // const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
-const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/message";
+const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/user";
 
 function createUser(e){
     e.preventDefault();
