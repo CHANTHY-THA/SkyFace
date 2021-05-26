@@ -35,8 +35,8 @@ app.post("/message", (req, res) =>{
 
 
 app.get("/user", (req, res) => {
-  messages = JSON.parse(fs.readFileSync(USERS).toString());
-  res.send(messages);
+  users = JSON.parse(fs.readFileSync(USERS).toString());
+  res.send(users);
 });
 
 app.post("/user", (req, res) =>{
