@@ -1,5 +1,5 @@
 
-// const IP = "192.168.88.29";
+// const IP = "192.168.88.18";
 // const PORT = 3000;
 // const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
 const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/user";
@@ -13,7 +13,6 @@ function createUser(e){
             gen = get.value ;
         };
     };
-    console.log(gen)
     let user = {user : firstName.value + " " + lastName.value , email : email.value , password:pass.value ,gender: gen};
     if ( firstName.value !== "" && lastName.value !== "" && email.value !== "" && pass.value !== "" && confirm.value !== ""){
         let name = {user : firstName.value + " " + lastName.value, password: pass.value , gender: gen};

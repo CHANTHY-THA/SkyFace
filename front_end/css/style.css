@@ -9,13 +9,16 @@ body{
     width: 30%;
     margin-left: 35%;
     margin-top: 1%;
-    height: 95vh;
+    height: 93vh;
     border-radius: 24px;
     background: #fff;
 }
-.contence{
-    display: block;
+.ChangeSetting{
+    background: red;
+    width: 40px;
+    height: 5vh;
 }
+
 .userList{
     display: none;
     overflow-y: auto;
@@ -23,8 +26,7 @@ body{
 }
 .profil{
     display: none;
-    height: 90px;
-    background: green;
+    height: 70px;
     color: #fff;
     border-top-right-radius: 18px;
     border-top-left-radius: 18px;
@@ -33,9 +35,25 @@ h2{
     margin-left: 2%;
 }
 .picture{
+    height: 70px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+}
+.status{
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+}
+#chat{
+    margin-left: 20%;
+    color: #000;
+}
+#threeDot{
+    width: 25px;
+    height: 4vh;
+    border-radius: none;
+    margin-right: 6%;
 }
 h4{
     display: flex;
@@ -79,11 +97,19 @@ h1{
     width: 30px;
     height: 4vh;
 }
+#goBack{
+    margin-left: 3%;
+    margin-top: 5%;
+    width: 30px;
+    height: 4vh;
+}
 #person{
     margin-left: 10%;
     margin-top: 3%;
 }
-#back:hover{
+.status:hover,
+#back:hover,
+#goBack:hover{
     cursor: pointer;
 }
 .image{
@@ -101,15 +127,91 @@ img{
     width: 25px;
     height: 4vh;
     margin-top: 0;
-    background: none;
     margin-left: 2%;
 }
-#sound{
+#setting:hover{
+    cursor: pointer;
+}
+
+#personSetting{
+   margin: auto;
+   display: flex;
+   justify-content: center;
+}
+p{
+    margin-left: 5%;
+    color: #fff;
+}
+.thems{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.emo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nickname{
+    display: flex;
+    align-items: center;
+}
+#action{
+    color: rgba(112, 103, 103, 0.856);
+}
+.viewPhoto{
+    display: flex;
+    align-items: center;
+}
+.creatGroup{
+    display: flex;
+    align-items: center;
+}
+.notifications{
+    display: flex;
+    align-items: center;
+}
+#threeDot:hover{
+    cursor: pointer;
+}
+.creatGroup:hover,
+.nickname:hover,
+.viewPhoto:hover,
+.Block:hover,
+.notifications:hover,
+.emo:hover,
+.thems:hover{
+    cursor: pointer;
+    background: rgba(53, 50, 50, 0.972);
+}
+#color{
+    border-radius: 360px;
+    width: 22px;
+    height: 4vh;
+    margin-right: 7%;
+}
+#color:hover{
+    cursor: pointer;
+}
+.Block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#blockSetting{
+    width: 30px;
+    height: 5vh;
+    margin-top: 0;
+    margin-right: 4%;
+}
+
+#soundImage{
     width: 20px;
     height: 3vh;
     margin-top: 5px;
     margin-left: 1%;
 }
+
 h3{
     margin-left: 2%;
     text-transform: uppercase;
@@ -118,17 +220,26 @@ h3{
     display: none;
 }
 #search{
-    width: 100%;
+    width: 90%;
+    border-radius: 20px;
+    margin-left: 5%;
     outline: none;
     border: none;
     padding: 7px;
-    background: rgba(0, 0, 0, 0.37);
+    background: rgba(42, 40, 40, 0.52);
     color: #fff;
 }
+.change{
+    display: none;
+    margin-top: 0;
+    height: 95vh;
+    border-radius: 18px;
+    background: #000;
+}
 .message{
-    background: rgba(8, 8, 8, 0.87);
+    background: rgba(0,0,0,0.1);
     height: 75vh;
-    padding: 10px 0;
+    padding-bottom: 10px ;
     color: #fff;
     overflow-y: auto;
 }
@@ -184,9 +295,20 @@ span{
     border-radius: 360px;
     text-align: center;
 }
+#addButton{
+    cursor: pointer;
+}
+#bold{
+    display: none;
+}
+#italic{
+    font-style: italic;
+    display: none;
+}
+
 #text{
     margin-left:3%;
-    width: 55%;
+    width: 53%;
     border: none;
     outline: none;
     position: relative;
@@ -290,16 +412,17 @@ span{
         color: #000;
     }
     
+
+
 }
 #emoji-btn{
     background: #fff;
-    position: absolute;
     font-size: 1.3rem;
-    left: 77%;
-    top:7px;
     opacity:0.5;
     outline: none;
     border: none;
+    margin-right: 5%;
+    background: none;
 }
 #emoji-btn:hover{
     cursor: pointer;

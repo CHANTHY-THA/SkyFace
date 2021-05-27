@@ -14,49 +14,101 @@
   <body>
 
     <div class="conversation">
-      <div class="header">
-        <div class="UserProfile">
-          <img id="back" src="../image/Arrow_back_chevron_left_prev-128.webp" alt="">
-          <img id="person" src="../image/images.png" alt="">
-          <h3></h3>
+      <div class="face">
+        <div class="header">
+          <div class="UserProfile">
+            <img id="back" src="../image/back.png" alt="">
+            <img id="person" src="../image/images.png" alt="">
+            <h3></h3>
+          </div>
+      
+          <img id="setting" src="../image/button.webp" alt="">
         </div>
-    
-        <img id="setting" src="../image/button.webp" alt="">
-      </div>
-      <audio id="audio">
-        <source src="../sound/chat.mp3" type="audio/mpeg">;
-      </audio>
 
-      <div class="profil">
-        <div class="picture">
-          <img src="../image/images.png">
-          <h2></h2>
+        <audio id="audio">
+          <source src="../sound/chat.mp3" type="audio/mpeg">;
+        </audio>
+
+        <div class="HomePage">
+          
+          <div class="profil">
+            <div class="picture">
+              <div class="status">
+                <img id="PersonalChat"  src="../image/images.png">
+                <p id="chat">Chats</p>
+              </div>
+              <img id="threeDot" src="../image/logout-rounded (1).png" alt="">
+            </div>
+          </div>
+  
+          <div class="searchButton">
+            <input id="search" type="search" placeholder="search name">
+          </div>
+  
+          <div class="userList">
+            <!-- <div class="user">
+              <img src="../image/images.png" alt="">
+              <h1>chanthy tha</h1>
+            </div> -->
+          </div>
         </div>
-        <h4>status</h4>
+       
+        <!-- ------------------------------------------------------------------------- -->
+      
+        <div class="contence">
+          <div class="message"></div>
+        </div>
+        
+        <div class="sender">
+          <button id="addButton" > + </button>
+          <div class="stle">
+            <button id="bold" >Bold</button>
+            <button id="italic">Italic</button>
+          </div>
+          
+          <input type="text" id="text" placeholder="Type a message">
+          <img id="soundImage" src="../image/audio.png" alt="">
+          <button class="submit"> <i class="material-icons"> send</i></button>
+        </div>
+      </div>
+      <div class="change">
+        <img id="goBack" src="../image/back.png" alt="">
+        <div class="myProfile">
+          <img id="personSetting" src="../image/images.png" alt="">
+          <h1></h1>
+        </div>
+
+        <div class="thems">
+          <p>Thems</p>
+          <input type="color" id="color" name="color" alt="">
+        </div>
+        <div class="emo">
+          <p>Emoji</p>
+          <button id="emoji-btn"> &#127773;</button>
+        </div>
+      
+        <div class="nickname">
+          <p>Nickname</p>
+        </div>
+        <div class="moreAction">
+          <p id="action">More actions</p>
+        </div>
+        <div class="viewPhoto">
+          <p>View Photos & Videos</p>
+        </div>
+        <div class="creatGroup">
+          <p>Create group width...</p>
+        </div>
+
+        <div class="notifications">
+          <p>Notifications</p>
+        </div>
+        <div class="Block">
+          <p>Block</p>
+          <img id="blockSetting" src="../image/block.png" alt="">
+        </div>
       </div>
 
-      <div class="searchButton">
-        <input id="search" type="search" placeholder="search name">
-      </div>
-
-      <div class="userList">
-        <!-- <div class="user">
-          <img src="../image/images.png" alt="">
-          <h1>chanthy tha</h1>
-        </div> -->
-      </div>
-      <!-- ------------------------------------------------------------------------- -->
-
-      <div class="contence">
-        <div class="message"></div>
-      </div>
-      <div class="sender">
-        <button id="addButton" > + </button>
-        <input type="text" id="text" placeholder="Type a message">
-        <img id="sound" src="../image/audio.png" alt="">
-        <button id="emoji-btn"> &#127773;</button>
-        <button class="submit"> <i class="material-icons"> send</i></button>
-      </div>
     </div>
   </body>
 </html>

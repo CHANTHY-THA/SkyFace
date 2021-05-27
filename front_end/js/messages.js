@@ -1,94 +1,144 @@
 
-// const IP = "192.168.88.29";
+// const IP = "192.168.88.18";
 // const PORT = 3000;
 // const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
+// const GET_USERS = "http://" + IP + ":" + PORT + "/user";
 const GET_USERS = "https://skyface.herokuapp.com/user";
 const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
 
-function showMessage(response){
+let emojiLists = [
+  {name :":)" ,icon: "😊"},
+  {name :";(" ,icon: "😌"},
+  {name :"><" ,icon: "😆"},
+  {name :":p" ,icon: "😋"},
+  {name :"<3" ,icon: "❤️"},
+  {name :":o" ,icon: "😱"},
+  {name :":D" ,icon: "😛"},
+  {name :":" ,icon: "😶"},
+  {name :":|" ,icon: "😐"},
+  {name :"$$" ,icon: "🤑"},
+  {name :":x" ,icon: "😘"},
+  {name :":(" ,icon: "☹️"},
+  {name :":E" ,icon: "😁"},
+  {name :":#" ,icon: "🤐"},
+  {name :":@" ,icon: "😵"},
+  {name :"8)" ,icon: "🤓"},
+  {name :"^~^" ,icon: "😖"},
+  {name :";<" ,icon: "🤧"},
+  {name :"" ,icon: "😇"},
+  {name :":}" ,icon: "🤡"},
+  {name :":.)" ,icon: "😭"},
+  {name :"b-)" ,icon: "😎"},
+  {name :">_<" ,icon: "😡"},
+  {name :":>" ,icon: "👽"}
+  ];
+
+function showMessage(response) {
   let isText = response.data;
   let contence = document.querySelector(".contence");
   let para = document.querySelector(".message");
-  if (para !== null && isText.length !== 0){
+  if (para !== null && isText.length !== 0) {
     para.remove();
   }
   let message = document.createElement("div");
   message.className = "message";
-  for (let use of isText){
-    if (use.text !== ""){
+  for (let use of isText) {
+    if (use.text !== "") {
       let child = document.createElement('div');
       child.className = "paragraph"
       let span = document.createElement("span");
       span.textContent = use.text;
-      if (use.user == item.user){
-        span.style.background = "green";
-      }else{
+      if (use.user == item.user) {
+        span.style.background = "#318CE7";
+      } else {
+        span.style.background = "gray";
         span.style.marginLeft = 0 + "px";
         child.style.justifyContent = "flex-start";
         span.style.borderTopRightRadius = "25px";
         span.style.borderBottomRightRadius = "25px";
-        span.style.borderTopLeftRadius= "25px";
+        span.style.borderTopLeftRadius = "25px";
         span.style.borderBottomLeftRadius = "0px";
         span.style.marginLeft = "10px";
       }
       child.appendChild(span);
       message.appendChild(child);
       contence.appendChild(message)
-    } 
-  } 
+    }
+  }
 };
 
-function loadMessage(){
+function loadMessage() {
   axios.get(GET_MESSAGE_REQUEST).then(showMessage);
 };
 
-function sendMessage(){
+function sendMessage() {
   let sound = document.getElementById("audio");
-
-  if (text.value !== ""){
+  if (text.value !== "") {
+    for (let felling of emojiLists){
+      if (text.value == felling.name){
+        text.value = "";
+        text.value += felling.icon;
+        
+      }
+    }
     sound.play();
-    let word = {user : item.user , text:text.value};
+    let word = { user: item.user, text: text.value };
     axios.post(GET_MESSAGE_REQUEST, word).then(showMessage);
+   
   }
- 
   text.value = "";
+};
 
+function Boldtext() {
+  text.style.fontWeight = "bold";
+}
+function Italictext() {
+  text.style.fontStyle = "italic";
 }
 
 let userNam = document.querySelector("h3")
-let pro = document.querySelector("h2")
+let h1 = document.querySelector("h1")
 let item = JSON.parse(localStorage.getItem("user"));
 userNam.textContent = item.user;
-pro.textContent = item.user;
+h1.textContent = item.user;
+
+let bold = document.querySelector("#bold");
+let italic = document.querySelector("#italic");
+let text = document.querySelector("#text");
+let send = document.querySelector(".submit");
+send.addEventListener("click", sendMessage);
+bold.addEventListener("click", Boldtext);
+italic.addEventListener("click", Italictext);
+
+setInterval(loadMessage, 500);
 
 // ------------Emogi-----------------------------------------
 
 let btnemoji = document.getElementById('emoji-btn');
 const picker = new EmojiButton();
-document.addEventListener('DOMContentLoaded', () =>{
-    picker.on('emoji', emoji =>{
-        document.querySelector('#text').value += emoji;
-    });
-    btnemoji.addEventListener('click', () => {
-        picker.togglePicker(btnemoji);
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  picker.on('emoji', emoji => {
+    document.querySelector('#text').value += emoji;
+  });
+  btnemoji.addEventListener('click', () => {
+    picker.togglePicker(btnemoji);
+  });
 });
-
-let text = document.querySelector("#text");
-let send = document.querySelector(".submit");
-send.addEventListener("click", sendMessage);
-
-setInterval(loadMessage,500);
 
 // -----------Display page----------------------------------------
 
-function Homepage(){
+function Homepage() {
+  sender.style.display = "none";
   header.style.display = "none";
   contence.style.display = "none";
-  sender.style.display = "none";
   profil.style.display = "block";
   searchButton.style.display = "block";
   userList.style.display = "block";
+  contence.style.background = "red";
+}
+
+function Logout(){
+  window.location.href = "../index.html"
 }
 
 let searchButton = document.querySelector(".searchButton");
@@ -96,37 +146,41 @@ let profil = document.querySelector(".profil");
 let header = document.querySelector(".header");
 let contence = document.querySelector(".contence");
 let sender = document.querySelector(".sender");
+let threeDot = document.querySelector("#threeDot");
 let back = document.querySelector("#back");
-back.addEventListener("click", Homepage)
+back.addEventListener("click", Homepage);
+threeDot.addEventListener("click", Logout);
 
 // ---------------Display users----------------------
 
-function displayUsers(){
+function displayUsers() {
   axios.get(GET_USERS).then(response => {
     let lists = response.data;
     let boy = "../image/images.png"
     let girl = "../image/girl1.png"
     let letter = ""
-    for (let use of lists){
+    for (let use of lists) {
       let user = document.createElement("div");
       user.className = "user";
       let img = document.createElement("img");
       let person = document.querySelector("#person");
-      console.log(item)
-      if (item.gender == "male"){
+      let PersonalChat = document.querySelector("#PersonalChat");
+      if (item.gender == "male") {
         person.setAttribute("src", boy);
-      }else{
+        PersonalChat.setAttribute("src", boy);
+      } else {
         person.setAttribute("src", girl);
+        PersonalChat.setAttribute("src", girl);
       }
 
       let h1 = document.createElement("h1");
       h1.textContent = use.user;
-      if (use.gender == "male"){
+      if (use.gender == "male") {
         img.setAttribute("src", boy);
-      }else{
+      } else {
         img.setAttribute("src", girl);
       }
-      
+
       letter = use.user;
       ListName.push(letter)
       user.appendChild(img);
@@ -141,20 +195,83 @@ let userList = document.querySelector(".userList");
 displayUsers()
 
 // --------------------Search user-------------------------------------
-function SearchUser(){
+
+function SearchUser() {
   let find = search.value.toLowerCase()
   let items = document.querySelectorAll(".user")
-  for (let item of items){
+  for (let item of items) {
     let words = item.lastChild.textContent.toLocaleLowerCase();
-    if (words.indexOf(find) === -1){
+    if (words.indexOf(find) === -1) {
       item.style.display = "none";
-    }else{
+    } else {
       item.style.display = "block";
       item.style.display = "flex";
     }
   }
-  
+
 }
 
 let search = document.querySelector("#search")
 search.addEventListener("keyup", SearchUser);
+
+// ------------------bold and italic---------------------------------------
+
+let isFound = true;
+function Listofbolditalic() {
+  if (isFound) {
+    isFound = false;
+    send.style.marginLeft = 7 + "%";
+    soundImage.style.display = "none";
+    bold.style.display = "block"
+    italic.style.display = "block"
+  } else {
+    send.style.marginLeft = 12 + "%";
+    soundImage.style.display = "block";
+    bold.style.display = "none"
+    italic.style.display = "none"
+    isFound = true;
+  };
+
+};
+
+let soundImage = document.querySelector("#soundImage");
+let addButton = document.querySelector("#addButton");
+addButton.addEventListener("click", Listofbolditalic);
+
+// ------------------change setting--------------------------------------------
+
+function Changesetting() {
+  change.style.display = "block";
+  face.style.display = "none"
+}
+
+function goBacksetting() {
+  change.style.display = "none";
+  face.style.display = "block";
+  contence.style.background = color.value;
+  message.style.background = "none";
+  console.log(message)
+  console.log(color.value)
+}
+
+let message = document.querySelector(".message");
+let color = document.querySelector("#color");
+let goBack = document.querySelector("#goBack");
+let change = document.querySelector(".change");
+let setting = document.querySelector("#setting");
+let face = document.querySelector(".face");
+
+setting.addEventListener("click", Changesetting);
+goBack.addEventListener("click", goBacksetting);
+
+// ----------------Home setting----------------------------------------
+
+function HomeSetting(){
+  console.log("Hello")
+  homepage.style.display = "none";
+
+}
+
+let homepage = document.querySelector(".HomePage")
+let PersonalChat = document.querySelector("#PersonalChat")
+PersonalChat.addEventListener("click", HomeSetting);
