@@ -1,5 +1,5 @@
 
-// const IP = "192.168.88.18";
+// const IP = "192.168.88.20";
 // const PORT = 3000;
 // const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
 // const GET_USERS = "http://" + IP + ":" + PORT + "/user";
@@ -50,7 +50,21 @@ function showMessage(response) {
       span.textContent = use.text;
       if (use.user == item.user) {
         span.style.background = "#318CE7";
+        if (use.styleBold == "bold"){
+          span.style.fontWeight = "bold";
+        }
+
+        if (use.styleItalic == "italic"){
+          span.style.fontStyle = "italic";
+        }
       } else {
+
+        if (use.styleBold == "bold"){
+          span.style.fontWeight = "bold";
+        }
+        if (use.styleItalic == "italic"){
+          span.style.fontStyle = "italic";
+        }
         span.style.background = "gray";
         span.style.marginLeft = 0 + "px";
         child.style.justifyContent = "flex-start";
@@ -82,25 +96,53 @@ function sendMessage() {
       }
     }
     sound.play();
-    let word = { user: item.user, text: text.value };
+    let word = { user: item.user, text: text.value ,styleBold : fontBold , styleItalic : fontItalic };
     axios.post(GET_MESSAGE_REQUEST, word).then(showMessage);
    
   }
   text.value = "";
 };
 
+let isBold = true;
 function Boldtext() {
-  text.style.fontWeight = "bold";
+  if(text.value !== ""){
+    if (isBold){
+      isBold = false;
+      fontBold = "bold"
+      text.style.fontWeight = "bold";
+    }else{
+      isBold = true;
+      text.style.fontWeight = "normal";
+      fontBold = ""
+    }
+  }
 }
+
+let itafound = true;
 function Italictext() {
-  text.style.fontStyle = "italic";
+  if (text.value !== ""){
+    if (itafound){
+      itafound = false
+      fontItalic = "italic"
+      text.style.fontStyle = "italic";
+    }else{
+      itafound = true;
+      text.style.fontStyle = "normal";
+      fontItalic = ""
+    }
+  }
 }
+
+let fontBold = "";
+let fontItalic = "";
 
 let userNam = document.querySelector("h3")
 let h1 = document.querySelector("h1")
 let item = JSON.parse(localStorage.getItem("user"));
 userNam.textContent = item.user;
 h1.textContent = item.user;
+h1.style.color = "white";
+h1.style.textAlign = "center";
 
 let bold = document.querySelector("#bold");
 let italic = document.querySelector("#italic");
@@ -110,7 +152,21 @@ send.addEventListener("click", sendMessage);
 bold.addEventListener("click", Boldtext);
 italic.addEventListener("click", Italictext);
 
-setInterval(loadMessage, 500);
+function IsNotstyle(){
+  if (text.value == ""){
+    text.style.fontStyle = "normal";
+    text.style.fontWeight = "normal";
+    fontBold = "";
+    fontItalic = "";
+  }
+}
+
+setInterval(IsNotstyle, 100);
+
+if(text.value !== ""){
+  setInterval(loadMessage, 100);
+}
+loadMessage()
 
 // ------------Emogi-----------------------------------------
 
@@ -134,7 +190,6 @@ function Homepage() {
   profil.style.display = "block";
   searchButton.style.display = "block";
   userList.style.display = "block";
-  contence.style.background = "red";
 }
 
 function Logout(){
@@ -164,12 +219,15 @@ function displayUsers() {
       user.className = "user";
       let img = document.createElement("img");
       let person = document.querySelector("#person");
+      let personSetting = document.querySelector("#personSetting");
       let PersonalChat = document.querySelector("#PersonalChat");
       if (item.gender == "male") {
         person.setAttribute("src", boy);
+        personSetting.setAttribute("src", boy);
         PersonalChat.setAttribute("src", boy);
       } else {
         person.setAttribute("src", girl);
+        personSetting.setAttribute("src", girl);
         PersonalChat.setAttribute("src", girl);
       }
 
@@ -267,9 +325,7 @@ goBack.addEventListener("click", goBacksetting);
 // ----------------Home setting----------------------------------------
 
 function HomeSetting(){
-  console.log("Hello")
   homepage.style.display = "none";
-
 }
 
 let homepage = document.querySelector(".HomePage")

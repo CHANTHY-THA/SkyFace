@@ -1,5 +1,5 @@
 
-// const IP = "192.168.88.18";
+// const IP = "192.168.88.20";
 // const PORT = 3000;
 // const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
 const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/user";
@@ -69,9 +69,16 @@ function login(e) {
     e.preventDefault();
     axios.get(GET_LOGIN_REQUEST).then(response => {
         let data = response.data;
+        let gender = document.getElementsByName("gender");
+        let gen = "";
+        for (let get of gender){
+            if (get.checked){
+                gen = get.value ;
+            };
+        };
         for (let user of data){
-            if (username.value == user.user && password.value == user.password){
-                let name = {user : username.value , password : password.value};
+            if (username.value == user.user && password.value == user.password && gen == user.gender){
+                let name = {user : username.value , password : password.value , gender : gen};
                 localStorage.setItem("user",JSON.stringify(name));
                 p.textContent = "Login succesful...";
                 p.style.color = "green";
