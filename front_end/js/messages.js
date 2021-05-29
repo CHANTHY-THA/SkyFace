@@ -47,8 +47,18 @@ function showMessage(response) {
       let child = document.createElement('div');
       child.className = "paragraph"
       let span = document.createElement("span");
+      let spanImg = document.createElement("img");
+      let Person = document.createElement("img");
+      let Namechat = document.createElement("p");
+      Person.className = "chatwith";
+      spanImg.className = "spanImg";
       span.textContent = use.text;
       if (use.user == item.user) {
+        spanImg.src = "../image/button.webp";
+        spanImg.style.width = 20 + "px";
+        spanImg.style.height = 3 + "vh";
+        spanImg.style.marginLeft = 1 + "%";
+        spanImg.style.marginRight = 2 + "%";
         span.style.background = "#318CE7";
         if (use.styleBold == "bold"){
           span.style.fontWeight = "bold";
@@ -65,17 +75,40 @@ function showMessage(response) {
         if (use.styleItalic == "italic"){
           span.style.fontStyle = "italic";
         }
+        spanImg.src = "../image/button.webp";
+        spanImg.style.width = 20 + "px";
+        spanImg.style.height = 3 + "vh";
+        spanImg.style.marginBottom = "7%";
+        spanImg.style.marginLeft = "0";
+        if (use.gender == "female"){
+          Person.src = "../image/girl1.png";
+        }else{
+          Person.src = "../image/images.png";
+        };
+        Person.style.width = "30px";
+        Person.style.height = "30px";
+        Person.style.marginTop = 3 + "%";
+        
         span.style.background = "gray";
-        span.style.marginLeft = 0 + "px";
+        span.style.marginBottom = "5%";
         child.style.justifyContent = "flex-start";
         span.style.borderTopRightRadius = "25px";
         span.style.borderBottomRightRadius = "25px";
         span.style.borderTopLeftRadius = "25px";
         span.style.borderBottomLeftRadius = "0px";
         span.style.marginLeft = "10px";
+        Namechat.textContent = use.user;
+        Namechat.style.marginLeft= "12%";
+        Namechat.style.marginTop = "0";
+        Namechat.style.fontSize = "12px";
+        Namechat.style.color = "rgba(211, 199, 199, 0.856)";
+        child.appendChild(Person);
       }
+
       child.appendChild(span);
+      child.appendChild(spanImg);
       message.appendChild(child);
+      message.appendChild(Namechat);
       contence.appendChild(message)
     }
   }
@@ -92,13 +125,16 @@ function sendMessage() {
       if (text.value == felling.name){
         text.value = "";
         text.value += felling.icon;
-        
       }
     }
     sound.play();
-    let word = { user: item.user, text: text.value ,styleBold : fontBold , styleItalic : fontItalic };
+    let word = { user: item.user,
+            text: text.value ,
+            styleBold : fontBold ,
+            styleItalic : fontItalic,
+            gender:item.gender ,
+            };
     axios.post(GET_MESSAGE_REQUEST, word).then(showMessage);
-   
   }
   text.value = "";
 };
@@ -137,10 +173,12 @@ let fontBold = "";
 let fontItalic = "";
 
 let userNam = document.querySelector("h3")
+let homeName = document.querySelector("#homeName")
 let h1 = document.querySelector("h1")
 let item = JSON.parse(localStorage.getItem("user"));
 userNam.textContent = item.user;
 h1.textContent = item.user;
+homeName.textContent = item.user;
 h1.style.color = "white";
 h1.style.textAlign = "center";
 
@@ -162,10 +200,7 @@ function IsNotstyle(){
 }
 
 setInterval(IsNotstyle, 100);
-
-if(text.value !== ""){
-  setInterval(loadMessage, 100);
-}
+setInterval(loadMessage, 100);
 loadMessage()
 
 // ------------Emogi-----------------------------------------
@@ -190,12 +225,14 @@ function Homepage() {
   profil.style.display = "block";
   searchButton.style.display = "block";
   userList.style.display = "block";
+  homePage.style.display = "block";
 }
 
 function Logout(){
   window.location.href = "../index.html"
 }
 
+let homePage = document.querySelector(".HomePage");
 let searchButton = document.querySelector(".searchButton");
 let profil = document.querySelector(".profil");
 let header = document.querySelector(".header");
@@ -223,15 +260,18 @@ function displayUsers() {
       let PersonalChat = document.querySelector("#PersonalChat");
       if (item.gender == "male") {
         person.setAttribute("src", boy);
+        homeImage.setAttribute("src", boy);
         personSetting.setAttribute("src", boy);
         PersonalChat.setAttribute("src", boy);
       } else {
         person.setAttribute("src", girl);
         personSetting.setAttribute("src", girl);
         PersonalChat.setAttribute("src", girl);
+        homeImage.setAttribute("src", girl);
       }
 
       let h1 = document.createElement("h1");
+      h1.id = "UserNameList";
       h1.textContent = use.user;
       if (use.gender == "male") {
         img.setAttribute("src", boy);
@@ -249,6 +289,7 @@ function displayUsers() {
 };
 
 let ListName = [];
+let homeImage = document.querySelector("#homeImage")
 let userList = document.querySelector(".userList");
 displayUsers()
 
@@ -307,9 +348,6 @@ function goBacksetting() {
   change.style.display = "none";
   face.style.display = "block";
   contence.style.background = color.value;
-  message.style.background = "none";
-  console.log(message)
-  console.log(color.value)
 }
 
 let message = document.querySelector(".message");
@@ -326,8 +364,42 @@ goBack.addEventListener("click", goBacksetting);
 
 function HomeSetting(){
   homepage.style.display = "none";
+  homeProfile.style.display = "block";
+}
+
+function Backtohome(){
+  homepage.style.display = "block";
+  homeProfile.style.display = "none";
 }
 
 let homepage = document.querySelector(".HomePage")
+let backHome = document.querySelector("#backHome")
+let homeProfile = document.querySelector(".homeProfile")
 let PersonalChat = document.querySelector("#PersonalChat")
 PersonalChat.addEventListener("click", HomeSetting);
+backHome.addEventListener("click", Backtohome);
+
+function changeHome(){
+  if(checkbox.checked){
+    threeDot.src = "../image/logout-rounded.png";
+    homepage.style.background = "#000";
+    homeProfile.style.background = "#000";
+    homepage.style.color = "#fff";
+    chat.style.color = "#fff";
+    search.style.background = "#fff";
+    search.style.color = "#000";
+  }else{
+    threeDot.src = "../image/logout-rounded(1).png";
+    homepage.style.background = "#fff";
+    homeProfile.style.background = "teal";
+    chat.style.color = "#000";
+    homepage.style.color = "#000";
+
+    search.style.background = "rgba(0,0,0,0.5)";
+    search.style.color = "#000";
+  }
+}
+
+let chat = document.querySelector("#chat");
+let checkbox = document.querySelector("#checkbox");
+checkbox.addEventListener("click" , changeHome)

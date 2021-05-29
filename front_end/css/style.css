@@ -13,11 +13,146 @@ body{
     border-radius: 24px;
     background: #fff;
 }
-.ChangeSetting{
-    background: red;
-    width: 40px;
-    height: 5vh;
+.HomePage{
+    display: none;
+    height: 95vh;
+    border-radius: 20px;
 }
+.contence{
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.609);
+}
+
+/* ----------------Home setting-------------------------------- */
+.homeProfile{
+    display: none;
+    background: teal;
+    height: 93vh;
+    border-radius: 24px;
+}
+#backHome{
+    width: 25px;
+    height: 25px;
+    margin-top: 3%;
+}
+.homeHeader{
+    text-align: center;
+}
+#homeImage{
+    /* margin-top: 10%; */
+    width: 70px;
+    height: 70px;
+}
+#homeName{
+    font-size: 25px;
+}
+.Dark{
+    display: flex;
+    align-items: center;
+}
+#darkmode{
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+    margin-left: 43%;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .2s;
+transition: .2s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 23px;
+width: 23px;
+right: 25px;
+bottom: 1px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+.homeStatus{
+    display: flex;
+}
+#statusImg{
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+}
+.Notifica{
+    display: flex;
+}
+#notificaImg{
+    width: 34px;
+    height: 34px;
+    margin-left: 20px;
+    background: #fff;
+}
+.switchaccount{
+    display: flex;
+}
+#switchImg{
+    width: 18px;
+    height: 18px;
+    background: purple;
+    padding: 8px;
+    margin-left: 20px;
+}
+.help{
+    display: flex;
+}
+#helpImg{
+    width: 45px;
+    height: 45px;
+    margin-left: 15px;
+}
+.Dark:hover,
+.homeStatus:hover,
+.Notifica:hover,
+.switchaccount:hover,
+.help:hover{
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+}
+
+
+/* --------------account setting--------------------------------- */
 
 .userList{
     display: none;
@@ -157,7 +292,8 @@ p{
     align-items: center;
 }
 #action{
-    color: rgba(112, 103, 103, 0.856);
+    /* colorgba(212, 199, 199, 0.637)56); */
+    color: rgba(211, 199, 199, 0.856);
 }
 .viewPhoto{
     display: flex;
@@ -226,7 +362,7 @@ h3{
     outline: none;
     border: none;
     padding: 7px;
-    background: rgba(42, 40, 40, 0.52);
+    background: rgba(42, 40, 40, 0.075);
     color: #fff;
 }
 .change{
@@ -237,27 +373,30 @@ h3{
     background: #000;
 }
 .message{
-    background: rgba(0,0,0,0.1);
     height: 75vh;
     padding-bottom: 10px ;
     color: #fff;
-    overflow-y: auto;
 }
 .paragraph{
     display: flex;
     justify-content: flex-end;
-    
+    align-items: flex-end;
 }
 span{
     display: flex;
     justify-content: flex-end;
-    margin: 0.75rem;
-    padding: 0.5rem;
+    margin-top: 2%;
+    padding: 7px; 
     background-color: rgb(85, 82, 82);
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-left-radius: 25px;
     word-break: break-all;
+}
+
+.spanImg:hover{
+    cursor: pointer;
+    background: rgba(12, 12, 12, 0.383);
 }
 .sender{
     border-bottom-left-radius: 15px;
@@ -369,8 +508,6 @@ span{
     span{
         display: flex;
         justify-content: flex-end;
-        margin: 0.75rem;
-        padding: 0.5rem;
         background-color: rgb(85, 82, 82);
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
