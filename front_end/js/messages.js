@@ -406,7 +406,6 @@ backHome.addEventListener("click", Backtohome);
 
 function changeHome(){
   if(checkbox.checked){
-    threeDot.src = "../image/logout-rounded.png";
     homepage.style.background = "#000";
     homeProfile.style.background = "#000";
     homepage.style.color = "#fff";
@@ -414,13 +413,12 @@ function changeHome(){
     search.style.background = "#fff";
     search.style.color = "#000";
   }else{
-    threeDot.src = "../image/logout-rounded(1).png";
     homepage.style.background = "#fff";
     homeProfile.style.background = "teal";
     chat.style.color = "#000";
     homepage.style.color = "#000";
 
-    search.style.background = "rgba(0,0,0,0.5)";
+    search.style.background = "rgba(42, 40, 40, 0.075)";
     search.style.color = "#000";
   }
 }
