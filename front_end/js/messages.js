@@ -4,10 +4,10 @@
 // const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
 // const GET_USERS = "http://" + IP + ":" + PORT + "/user";
 // const GET_USERSID = "http://" + IP + ":" + PORT + "/userId";
-// const GET_DELETE = "http://" + IP + ":" + PORT + "/userDelete/:index";
+// const GET_DELETE = "http://" + IP + ":" + PORT + "/userDelete";
 
 const GET_USERSID = "https://skyface.herokuapp.com/userId";
-const GET_DELETE = "https://skyface.herokuapp.com/userDelete/:index";
+const GET_DELETE = "https://skyface.herokuapp.com/userDelete";
 const GET_USERS = "https://skyface.herokuapp.com/user";
 const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
 
@@ -58,6 +58,7 @@ function showMessage(response) {
       child.id = indexOfmessage += 1;
       let span = document.createElement("span");
       let remove = document.createElement("img");
+      remove.id = "removeImg";
       remove.addEventListener("click", Delete);
 
       let spanImg = document.createElement("img");
@@ -437,7 +438,7 @@ function EditMessage(event){
   let edit = document.querySelector(".edit");
   edit.style.display = "block"
   let index = event.target.parentElement;
-
+  removeIcon.display = "block";
   axios.get(GET_MESSAGE_REQUEST).then(response => {
     let miss = response.data;
     let indexOfuser = parseInt(index.id);
@@ -455,6 +456,8 @@ function EditMessage(event){
     })
   });
 };
+
+let removeIcon = document.querySelector("#removeImg");
 
 function Delete(event){
   let index = event.target.parentElement;
