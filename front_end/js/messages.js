@@ -43,7 +43,6 @@ function showMessage(response) {
   let isText = response.data;
   let indexOfmessage = -1;
 
-  let contence = document.querySelector(".contence");
   let para = document.querySelector(".message");
   if (para !== null && isText.length !== 0) {
     para.remove();
@@ -210,6 +209,7 @@ homeName.textContent = item.user;
 h1.style.color = "white";
 h1.style.textAlign = "center";
 
+let contence = document.querySelector(".contence");
 let bold = document.querySelector("#bold");
 let italic = document.querySelector("#italic");
 let text = document.querySelector("#text");
