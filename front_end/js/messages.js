@@ -1,8 +1,13 @@
 
-// const IP = "192.168.88.20";
+// const IP = "192.168.43.174";
 // const PORT = 3000;
 // const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
 // const GET_USERS = "http://" + IP + ":" + PORT + "/user";
+// const GET_USERSID = "http://" + IP + ":" + PORT + "/userId";
+// const GET_DELETE = "http://" + IP + ":" + PORT + "/userDelete/:index";
+
+const GET_USERSID = "https://skyface.herokuapp.com/userId";
+const GET_DELETE = "https://skyface.herokuapp.com/userDelete/:index";
 const GET_USERS = "https://skyface.herokuapp.com/user";
 const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
 
@@ -33,8 +38,11 @@ let emojiLists = [
   {name :":>" ,icon: "👽"}
   ];
 
+
 function showMessage(response) {
   let isText = response.data;
+  let indexOfmessage = -1;
+
   let contence = document.querySelector(".contence");
   let para = document.querySelector(".message");
   if (para !== null && isText.length !== 0) {
@@ -46,19 +54,30 @@ function showMessage(response) {
     if (use.text !== "") {
       let child = document.createElement('div');
       child.className = "paragraph"
+     
+      child.id = indexOfmessage += 1;
       let span = document.createElement("span");
+      let remove = document.createElement("img");
+      remove.addEventListener("click", Delete);
+
       let spanImg = document.createElement("img");
+      spanImg.addEventListener("click", EditMessage);
+
       let Person = document.createElement("img");
       let Namechat = document.createElement("p");
       Person.className = "chatwith";
       spanImg.className = "spanImg";
       span.textContent = use.text;
       if (use.user == item.user) {
+        remove.src = "../image/delete.png";
+        remove.style.width = "30px";
+        remove.style.height = "30px";
+        remove.style.marginLeft = "0%";
+
         spanImg.src = "../image/button.webp";
         spanImg.style.width = 20 + "px";
         spanImg.style.height = 3 + "vh";
         spanImg.style.marginLeft = 1 + "%";
-        spanImg.style.marginRight = 2 + "%";
         span.style.background = "#318CE7";
         if (use.styleBold == "bold"){
           span.style.fontWeight = "bold";
@@ -107,6 +126,7 @@ function showMessage(response) {
 
       child.appendChild(span);
       child.appendChild(spanImg);
+      child.appendChild(remove);
       message.appendChild(child);
       message.appendChild(Namechat);
       contence.appendChild(message)
@@ -128,16 +148,19 @@ function sendMessage() {
       }
     }
     sound.play();
-    let word = { user: item.user,
-            text: text.value ,
-            styleBold : fontBold ,
-            styleItalic : fontItalic,
-            gender:item.gender ,
-            };
+    let word = {
+      user: item.user,
+      text: text.value ,
+      styleBold : fontBold ,
+      styleItalic : fontItalic,
+      gender:item.gender ,
+      };
     axios.post(GET_MESSAGE_REQUEST, word).then(showMessage);
   }
   text.value = "";
 };
+
+// -----------------------------------------------------------------
 
 let isBold = true;
 function Boldtext() {
@@ -198,10 +221,9 @@ function IsNotstyle(){
     fontItalic = "";
   }
 }
-
-setInterval(IsNotstyle, 100);
-setInterval(loadMessage, 100);
 loadMessage()
+setInterval(IsNotstyle, 300);
+setInterval(loadMessage, 3000);
 
 // ------------Emogi-----------------------------------------
 
@@ -402,4 +424,43 @@ function changeHome(){
 
 let chat = document.querySelector("#chat");
 let checkbox = document.querySelector("#checkbox");
-checkbox.addEventListener("click" , changeHome)
+checkbox.addEventListener("click" , changeHome);
+
+// --------------edit message----------------------------------------
+
+function EditMessage(event){
+  send.style.display = "none";
+  let edit = document.querySelector(".edit");
+  edit.style.display = "block"
+  let index = event.target.parentElement;
+
+  axios.get(GET_MESSAGE_REQUEST).then(response => {
+    let miss = response.data;
+    let indexOfuser = parseInt(index.id);
+    let next = miss[indexOfuser].text;
+    console.log(next)
+
+    text.value = miss[indexOfuser].text;
+
+    edit.addEventListener("click", () => {
+      let editId = {id:index.id,message:text.value};
+      axios.put(GET_USERSID,editId);
+
+      edit.style.display = "none";
+      send.style.display = "block";
+      text.value = "";
+    })
+  });
+  console.log(parseInt(index.id));
+
+};
+
+function Delete(event){
+  let index = event.target.parentElement;
+
+  let deleteId = index.id ;
+  let position = deleteId
+  console.log(position)
+  axios.delete(GET_DELETE+'/' + position).then(loadMessage);
+}
+

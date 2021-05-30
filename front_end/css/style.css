@@ -370,7 +370,7 @@ h3{
     margin-top: 0;
     height: 95vh;
     border-radius: 18px;
-    background: #000;
+    background: rgb(180, 114, 114);
 }
 .message{
     height: 75vh;
@@ -396,8 +396,8 @@ span{
 
 .spanImg:hover{
     cursor: pointer;
-    background: rgba(12, 12, 12, 0.383);
 }
+
 .sender{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -548,9 +548,6 @@ span{
         margin-bottom: 0;
         color: #000;
     }
-    
-
-
 }
 #emoji-btn{
     background: #fff;
@@ -563,4 +560,7 @@ span{
 }
 #emoji-btn:hover{
     cursor: pointer;
+}
+.edit{
+    display: none;
 }

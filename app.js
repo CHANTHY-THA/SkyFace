@@ -26,7 +26,6 @@ app.get("/message", (req, res) => {
 
 app.post("/message", (req, res) =>{
   let name = req.body;
-  console.log(name);
   messages.push(name);
   fs.writeFileSync(MESSAGE_lIST, JSON.stringify(messages));
   res.send(messages);
@@ -44,6 +43,26 @@ app.post("/user", (req, res) =>{
   users.push(name);
   fs.writeFileSync(USERS, JSON.stringify(users));
   res.send(users);
+});
+
+
+app.put("/userId", (req, res) =>{
+  let index = parseInt(req.body.id);
+  let message = req.body.message;
+
+  messages[index].text = message;
+  fs.writeFileSync(MESSAGE_lIST,JSON.stringify(messages));
+  res.send(messages)
+
+});
+
+app.delete("/userDelete/:index", (req, res) =>{
+  let position = req.params.index;
+  let change = parseInt(position);
+  
+  messages.splice(change,1);
+  fs.writeFileSync(MESSAGE_lIST,JSON.stringify(messages));
+  res.send(messages)
 });
 
 // Read the file to set the mesage variables
