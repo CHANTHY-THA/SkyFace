@@ -59,7 +59,7 @@ function showMessage(response) {
       let span = document.createElement("span");
       let remove = document.createElement("img");
       remove.id = "removeImg";
-      remove.addEventListener("click", Delete);
+      // remove.addEventListener("click", Delete);
 
       let spanImg = document.createElement("img");
       spanImg.addEventListener("click", EditMessage);
@@ -131,7 +131,7 @@ function showMessage(response) {
 
       child.appendChild(span);
       child.appendChild(spanImg);
-      child.appendChild(remove);
+      // child.appendChild(remove);
       message.appendChild(child);
       message.appendChild(Namechat);
       contence.appendChild(message)
@@ -246,13 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // -----------Display page----------------------------------------
 
 function Homepage() {
-  sender.style.display = "none";
-  header.style.display = "none";
-  contence.style.display = "none";
-  profil.style.display = "block";
-  searchButton.style.display = "block";
-  userList.style.display = "block";
-  homePage.style.display = "block";
+  home.style.display = "none";
+  homepage.style.display = "block";
 }
 
 function Logout(){
@@ -261,14 +256,10 @@ function Logout(){
 
 let homePage = document.querySelector(".HomePage");
 let searchButton = document.querySelector(".searchButton");
-let profil = document.querySelector(".profil");
-let header = document.querySelector(".header");
-let contence = document.querySelector(".contence");
-let sender = document.querySelector(".sender");
-let threeDot = document.querySelector("#threeDot");
+let switchaccount = document.querySelector(".switchaccount");
 let back = document.querySelector("#back");
 back.addEventListener("click", Homepage);
-threeDot.addEventListener("click", Logout);
+switchaccount.addEventListener("click", Logout);
 
 // ---------------Display users----------------------
 
@@ -278,20 +269,21 @@ function displayUsers() {
     let boy = "../image/images.png"
     let girl = "../image/girl1.png"
     let letter = ""
+    let indexOfuser = -1;
     for (let use of lists) {
       let user = document.createElement("div");
       user.className = "user";
+      user.id = indexOfuser += 1;
+      user.addEventListener("click" , goTochat);
+
       let img = document.createElement("img");
-      let person = document.querySelector("#person");
       let personSetting = document.querySelector("#personSetting");
       let PersonalChat = document.querySelector("#PersonalChat");
       if (item.gender == "male") {
-        person.setAttribute("src", boy);
         homeImage.setAttribute("src", boy);
         personSetting.setAttribute("src", boy);
         PersonalChat.setAttribute("src", boy);
       } else {
-        person.setAttribute("src", girl);
         personSetting.setAttribute("src", girl);
         PersonalChat.setAttribute("src", girl);
         homeImage.setAttribute("src", girl);
@@ -317,8 +309,16 @@ function displayUsers() {
 
 let ListName = [];
 let homeImage = document.querySelector("#homeImage")
+let home = document.querySelector(".Home")
 let userList = document.querySelector(".userList");
 displayUsers()
+
+function goTochat(event){
+  let index = event.target.parentElement.lastChild;
+  userNam.textContent = index.textContent;
+  homepage.style.display = "none";
+  home.style.display = "block";
+}
 
 // --------------------Search user-------------------------------------
 
@@ -346,12 +346,10 @@ let isFound = true;
 function Listofbolditalic() {
   if (isFound) {
     isFound = false;
-    send.style.marginLeft = 7 + "%";
     soundImage.style.display = "none";
     bold.style.display = "block"
     italic.style.display = "block"
   } else {
-    send.style.marginLeft = 12 + "%";
     soundImage.style.display = "block";
     bold.style.display = "none"
     italic.style.display = "none"
@@ -436,9 +434,9 @@ checkbox.addEventListener("click" , changeHome);
 function EditMessage(event){
   send.style.display = "none";
   let edit = document.querySelector(".edit");
-  edit.style.display = "block"
+  edit.style.display = "block";
   let index = event.target.parentElement;
-  removeIcon.display = "block";
+
   axios.get(GET_MESSAGE_REQUEST).then(response => {
     let miss = response.data;
     let indexOfuser = parseInt(index.id);
@@ -457,13 +455,11 @@ function EditMessage(event){
   });
 };
 
-let removeIcon = document.querySelector("#removeImg");
-
 function Delete(event){
   let index = event.target.parentElement;
   let deleteId = index.id ;
   let position = deleteId
   console.log(position);
   axios.delete(GET_DELETE+'/' + position);
-}
+};
 

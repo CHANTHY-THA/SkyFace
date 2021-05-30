@@ -15,19 +15,37 @@
 
     <div class="conversation">
       <div class="face">
-        <div class="header">
-          <div class="UserProfile">
-            <img id="back" src="../image/back.png" alt="">
-            <img id="person" src="../image/images.png" alt="">
-            <h3></h3>
-          </div>
-      
-          <img id="setting" src="../image/button.webp" alt="">
-        </div>
 
-        <audio id="audio" >
-          <source src="../sound/chatsound.mp3" type="audio/mpeg">;
-        </audio>
+        <div class="Home">
+          <div class="header">
+            <div class="UserProfile">
+              <img id="back" src="../image/back.png" alt="">
+              <h3></h3>
+              <p id="statusColor" >Active</p>
+            </div>
+            <img id="setting" src="../image/button.webp" alt="">
+          </div>
+  
+          <audio id="audio" >
+            <source src="../sound/chatsound.mp3" type="audio/mpeg">;
+          </audio>
+          <div class="contence">
+            <div class="message"></div>
+          </div>
+          
+          <div class="sender">
+            <button id="addButton" > + </button>
+            <div class="stle">
+              <button id="bold" >Bold</button>
+              <button id="italic">Italic</button>
+            </div>
+            
+            <input type="text" id="text" placeholder="Type a message">
+            <img id="soundImage" src="../image/audio.png" alt="">
+            <button class="submit"> <i class="material-icons"> send</i></button>
+            <button class="edit"> <i class="material-icons"> send</i></button>
+          </div>
+        </div>
 
 
         <div class="HomePage">
@@ -38,7 +56,7 @@
                 <img id="PersonalChat"  src="../image/images.png">
                 <p id="chat">Chats</p>
               </div>
-              <img id="threeDot" src="../image/logout-rounded (1).png" alt="">
+            
             </div>
           </div>
   
@@ -89,23 +107,7 @@
 
         </div>
         <!-- ------------------------------------------------------------------------- -->
-      
-        <div class="contence">
-          <div class="message"></div>
-        </div>
-        
-        <div class="sender">
-          <button id="addButton" > + </button>
-          <div class="stle">
-            <button id="bold" >Bold</button>
-            <button id="italic">Italic</button>
-          </div>
-          
-          <input type="text" id="text" placeholder="Type a message">
-          <img id="soundImage" src="../image/audio.png" alt="">
-          <button class="submit"> <i class="material-icons"> send</i></button>
-          <button class="edit"> <i class="material-icons"> send</i></button>
-        </div>
+
       </div>
 
       

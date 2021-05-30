@@ -31,8 +31,6 @@ app.post("/message", (req, res) =>{
   res.send(messages);
 });
 
-
-
 app.get("/user", (req, res) => {
   users = JSON.parse(fs.readFileSync(USERS).toString());
   res.send(users);
@@ -45,12 +43,13 @@ app.post("/user", (req, res) =>{
   res.send(users);
 });
 
-
 app.put("/userId", (req, res) =>{
   let index = parseInt(req.body.id);
   let message = req.body.message;
-
+  
   messages[index].text = message;
+  console.log(messages)
+  
   fs.writeFileSync(MESSAGE_lIST,JSON.stringify(messages));
   res.send(messages)
 
@@ -59,7 +58,7 @@ app.put("/userId", (req, res) =>{
 app.delete("/userDelete/:index", (req, res) =>{
   let position = req.params.index;
   let change = parseInt(position);
-  console.log(change)
+  
   messages.splice(change,1);
   fs.writeFileSync(MESSAGE_lIST,JSON.stringify(messages));
   res.send(messages)
