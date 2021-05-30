@@ -87,6 +87,10 @@ function showMessage(response) {
           span.style.fontStyle = "italic";
         }
       } else {
+        remove.src = "../image/delete.png";
+        remove.style.marginLeft = "0%";
+        spanImg.style.width = "10px";
+        spanImg.style.height = "10px";
 
         if (use.styleBold == "bold"){
           span.style.fontWeight = "bold";
@@ -445,22 +449,18 @@ function EditMessage(event){
     edit.addEventListener("click", () => {
       let editId = {id:index.id,message:text.value};
       axios.put(GET_USERSID,editId);
-
       edit.style.display = "none";
       send.style.display = "block";
       text.value = "";
     })
   });
-  console.log(parseInt(index.id));
-
 };
 
 function Delete(event){
   let index = event.target.parentElement;
-
   let deleteId = index.id ;
   let position = deleteId
-  console.log(position)
-  axios.delete(GET_DELETE+'/' + position).then(loadMessage);
+  console.log(position);
+  axios.delete(GET_DELETE+'/' + position);
 }
 

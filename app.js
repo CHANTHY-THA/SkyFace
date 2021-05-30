@@ -59,7 +59,7 @@ app.put("/userId", (req, res) =>{
 app.delete("/userDelete/:index", (req, res) =>{
   let position = req.params.index;
   let change = parseInt(position);
-  
+  console.log(change)
   messages.splice(change,1);
   fs.writeFileSync(MESSAGE_lIST,JSON.stringify(messages));
   res.send(messages)
