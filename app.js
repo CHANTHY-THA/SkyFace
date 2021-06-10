@@ -15,15 +15,17 @@ app.use(express.static("front_end"));
 
 app.listen(process.env.PORT || port, () => {console.log("App is running...")});
 
-// DATA
+// MESSAGE DATA
 let messages = [];
 let users = [];
 
+// ------------Send message to user--------------------------------
 app.get("/message", (req, res) => {
   messages = JSON.parse(fs.readFileSync(MESSAGE_lIST).toString());
   res.send(messages);
 });
 
+// ------------Get message and store in file---------------------------
 app.post("/message", (req, res) =>{
   let name = req.body;
   messages.push(name);
@@ -31,17 +33,39 @@ app.post("/message", (req, res) =>{
   res.send(messages);
 });
 
+// --------------------Send userName------------------------------------
 app.get("/user", (req, res) => {
   users = JSON.parse(fs.readFileSync(USERS).toString());
   res.send(users);
 });
 
+// ------------------Get userName and store-----------------------------------------------------
 app.post("/user", (req, res) =>{
   let name = req.body;
   users.push(name);
   fs.writeFileSync(USERS, JSON.stringify(users));
   res.send(users);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.put("/userId", (req, res) =>{
   let index = parseInt(req.body.id);

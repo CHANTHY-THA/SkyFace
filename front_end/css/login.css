@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url("../image/login.jpg");
+    background-image: url("../image/sun.jpg");
     background-size: cover;
     font-family: sans-serif;
 }
@@ -59,18 +59,18 @@ label{
 }
 #create{
     margin-left: 8%;
-    background: rgba(0, 255, 55, 0.705);
+    background: #1E90FF;
 }
 #create:hover{
-    background: rgba(10, 221, 56, 0.568);
+    background: #1e8fffe0;
 }
 #cancel{
     margin-left: 4%;
-    background: rgb(151, 150, 150);
+    background: #50bbdf;
 }
 #back{
     margin-left: 33%;
-    background: rgb(168, 164, 164);
+    background: #00BFFF;
 }
 #create:hover,
 #cancel:hover,
@@ -120,12 +120,13 @@ input[type="password"]{
     border-radius: 8px;
     border: none;
     margin-left: 9%;
-    background: rgba(0, 255, 55, 0.705);
+    background: #1E90FF;
     color: #fff;
     margin-top: 3%;
 }
 #loginButton:hover{
     cursor: pointer;
+    background: #217ad3;
 }
 .signup{
     background: rgba(49, 48, 48, 0.972);

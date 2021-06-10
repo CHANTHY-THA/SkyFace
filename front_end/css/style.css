@@ -3,19 +3,22 @@ body{
    margin: 0;
    padding: 0;
    font-family: sans-serif;
-   background-image: url("../image/background.gif");
+   background-image: url("../image/h.jpg");
+   background-size: cover;
 }
 .conversation{
     width: 30%;
     margin-left: 35%;
     margin-top: 1%;
-    height: 93vh;
-    border-radius: 24px;
-    background: #fff;
+    height: 96vh;
+    border-radius: 25px;
+    background: #D3D3D3;
+}
+.Home{
+    display: none;
 }
 .HomePage{
-    display: none;
-    height: 95vh;
+    height: 9vh;
     border-radius: 20px;
 }
 .contence{
@@ -27,7 +30,7 @@ body{
 .homeProfile{
     display: none;
     background: teal;
-    height: 93vh;
+    height: 96vh;
     border-radius: 24px;
 }
 #backHome{
@@ -156,10 +159,9 @@ border-radius: 50%;
 
 .userList{
     overflow-y: auto;
-    height: 73vh;
 }
 .profil{
-    height: 70px;
+    height: px;
     color: #fff;
     border-top-right-radius: 18px;
     border-top-left-radius: 18px;
@@ -172,6 +174,9 @@ h2{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #1E90FF;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
 }
 .status{
     display: flex;
@@ -180,7 +185,7 @@ h2{
 }
 #chat{
     margin-left: 20%;
-    color: #000;
+    color: #fff;
 }
 
 h4{
@@ -350,25 +355,26 @@ h3{
 }
 
 #search{
+    margin-top: 3%;
     width: 90%;
     border-radius: 20px;
     margin-left: 5%;
     outline: none;
     border: none;
     padding: 7px;
-    background: rgba(42, 40, 40, 0.075);
+    background: rgba(0,0,0,0.2);
     color: #fff;
 }
 .change{
     display: none;
     margin-top: 0;
-    height: 95vh;
+    height: 96vh;
     border-radius: 18px;
-    background: rgb(180, 114, 114);
+    background: rgba(0,0,0,0.3);
 }
 
 .message{
-    height: 75vh;
+    height: 78vh;
     padding-bottom: 10px ;
     color: #fff;
 }
@@ -404,6 +410,7 @@ span{
     height: 7vh;
 }
 .submit{
+    margin-left: 2%;
     width: 30px;
     margin-top: 5px;
     height: 4vh;
@@ -435,7 +442,6 @@ span{
 }
 #addButton{
     border: none;
-    margin-left: 1%;
     font-size: 20px;
     width: 25px;
     color: #fff;
@@ -464,7 +470,6 @@ span{
     background: #fff;
     color: #000;
 }
-
 
 /* responsive */
 @media (max-width: 400px) {

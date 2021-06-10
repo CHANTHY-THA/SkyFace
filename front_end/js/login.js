@@ -1,5 +1,5 @@
 
-// const IP = "192.168.43.174";
+// const IP = "localhost";
 // const PORT = 3000;
 // const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
 
@@ -23,7 +23,6 @@ function createUser(e){
         window.location.href = "../chat/index.html";
     }
 }
-
 let loginUser = document.querySelector(".login");
 let create = document.querySelector(".createUser");
 let firstName = document.querySelector("#firstname");
@@ -77,22 +76,19 @@ function login(e) {
                 gen = get.value ;
             };
         };
-        for (let user of data){
-            if (username.value == user.user && password.value == user.password && gen == user.gender){
+        for (let use of data){
+            if (username.value == use.user && password.value == use.password && gen == use.gender){
                 let name = {user : username.value , password : password.value , gender : gen};
                 localStorage.setItem("user",JSON.stringify(name));
-                p.textContent = "Login succesful...";
-                p.style.color = "green";
+                confirm("Login succesful...")
+               
                 setTimeout(function(){
                     window.location.href = "../chat/index.html";
-                }, 3000);
-            }else{
-                p.textContent = "You don't have acount pleace create your account";
-                p.style.color = "red";
+                }, 2000);
             }
-        }
-    })
-}
+        };
+    });
+};
 const p = document.querySelector("p")
 const username = document.querySelector("#userName");
 const password = document.querySelector("#password");
