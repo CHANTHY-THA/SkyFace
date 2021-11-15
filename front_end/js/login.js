@@ -1,9 +1,9 @@
 
-// const IP = "localhost";
-// const PORT = 3000;
-// const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
+const IP = "localhost";
+const PORT = 3000;
+const GET_LOGIN_REQUEST = "http://" + IP + ":" + PORT + "/user";
 
-const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/user";
+// const GET_LOGIN_REQUEST = "https://skyface.herokuapp.com/user";
 
 function createUser(e){
     e.preventDefault();

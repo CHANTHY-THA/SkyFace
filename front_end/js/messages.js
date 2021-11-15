@@ -1,15 +1,15 @@
 
-// const IP = "localhost";
-// const PORT = 3000;
-// const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
-// const GET_USERS = "http://" + IP + ":" + PORT + "/user";
-// const GET_USERSID = "http://" + IP + ":" + PORT + "/userId";
-// const GET_DELETE = "http://" + IP + ":" + PORT + "/userDelete";
+const IP = "localhost";
+const PORT = 3000;
+const GET_MESSAGE_REQUEST = "http://" + IP + ":" + PORT + "/message";
+const GET_USERS = "http://" + IP + ":" + PORT + "/user";
+const GET_USERSID = "http://" + IP + ":" + PORT + "/userId";
+const GET_DELETE = "http://" + IP + ":" + PORT + "/userDelete";
 
-const GET_USERSID = "https://skyface.herokuapp.com/userId";
-const GET_DELETE = "https://skyface.herokuapp.com/userDelete";
-const GET_USERS = "https://skyface.herokuapp.com/user";
-const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
+// const GET_USERSID = "https://skyface.herokuapp.com/userId";
+// const GET_DELETE = "https://skyface.herokuapp.com/userDelete";
+// const GET_USERS = "https://skyface.herokuapp.com/user";
+// const GET_MESSAGE_REQUEST = "https://skyface.herokuapp.com/message";
 
 // ----------------Show message--------------------------------
 function showMessage(response) {
@@ -262,6 +262,7 @@ switchaccount.addEventListener("click", Logout);
 function displayUsers() {
   axios.get(GET_USERS).then(response => {
     let lists = response.data;
+    console.log(lists)
     let boy = "../image/images.png"
     let girl = "../image/girl1.png"
     let letter = ""
@@ -429,7 +430,7 @@ function EditMessage(event){
 
     edit.addEventListener("click", () => {
       let editId = {id:index.id,message:text.value};
-      axios.put(GET_USERSID,editId);
+      axios.put(GET_USERSID ,editId);
       edit.style.display = "none";
       send.style.display = "block";
       text.value = "";

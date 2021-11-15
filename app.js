@@ -47,6 +47,11 @@ app.post("/user", (req, res) =>{
   res.send(users);
 });
 
+app.put("/edit", (req, res) => {
+  let text = req.body;
+  console.log(text);
+})
+
 
 
 

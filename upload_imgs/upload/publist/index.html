@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="p-4">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="input-group">
+            <input type="file" id="fileId" class="form-control"  name="image">
+            <div class="input-group-append">
+                <button class="btn btn-info" id="upload" type="submit">UPLOAD NOW</button>
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="p-4">  
+        <img src="" alt="">
+    </div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/upload.js"></script>
+</html>
